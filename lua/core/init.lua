@@ -19,6 +19,8 @@ function M.setup()
 
     local plugins = require("plugins")
     packer.load(plugins)
+
+    require("colors").init()
 end
 
 return M

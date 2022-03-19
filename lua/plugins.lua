@@ -7,12 +7,6 @@ return {
     { "nvim-lua/plenary.nvim" },
     { "kyazdani42/nvim-web-devicons" },
 
-    -- Dracula for Vim
-    {
-        "dracula/vim",
-        after = "packer.nvim",
-        config = function()
-            vim.cmd([[ colorscheme dracula ]])
-        end,
-    }
+    -- Lush for Neovim themes
+    { "rktjmp/lush.nvim" },
 }
