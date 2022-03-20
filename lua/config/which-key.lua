@@ -59,7 +59,7 @@ local normal = {
             name = "Todo",
             l = { "<CMD>TodoLocList<CR>", "todo-list" },
             t = { "<CMD>TodoTelescope<CR>", "todo-telescope" },
-            q = { "<CMD>TodoQuickFix", "todo-quick-fix" },
+            q = { "<CMD>TodoQuickFix<CR>", "todo-quick-fix" },
         },
     },
     l = {

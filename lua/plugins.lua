@@ -84,6 +84,24 @@ return {
             require("config.fidget").setup()
         end,
     },
+    {
+        "simrat39/symbols-outline.nvim",
+        cmd = "SymbolsOutline",
+    },
+    {
+        "folke/trouble.nvim",
+        cmd = "TroubleToggle",
+        config = function()
+            require("config.trouble").setup()
+        end,
+    },
+    {
+        "folke/todo-comments.nvim",
+        cmd = { "TodoLocList", "TodoTelescope", "TodoQuickFix" },
+        config = function()
+            require("config.todo-comments").setup()
+        end,
+    },
 
     -- Language Server
     { "neovim/nvim-lspconfig" },

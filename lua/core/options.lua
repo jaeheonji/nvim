@@ -27,3 +27,10 @@ opt.splitright = true
 
 opt.ignorecase = true
 opt.smartcase = true
+
+-- for symbols-outline
+vim.g.symbols_outline = {
+    auto_preview = false,
+    position = "left",
+    width = 20,
+}
