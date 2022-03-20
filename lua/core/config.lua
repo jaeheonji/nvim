@@ -4,7 +4,7 @@ local M = {}
 M.config = {
 
     -- This item affects treesitter and LSP.
-    languages = { "lua", "fish" }
+    languages = { "lua", "fish", "rust" }
 }
 
 return M

@@ -1,3 +1,5 @@
+local utils = require("core.utils")
+
 return {
     -- Packer can manage itself
     { "wbthomason/packer.nvim" },
@@ -12,22 +14,30 @@ return {
     {
         "dracula/vim",
         as = "dracula",
-        config = function() vim.cmd([[ colorscheme dracula ]]) end
+        config = function()
+            vim.cmd([[ colorscheme dracula ]])
+        end,
     },
 
     -- Syntax
     {
         "nvim-treesitter/nvim-treesitter",
         run = ":TSUpdate",
-        config = function() require("config.nvim-treesitter").setup() end
+        config = function()
+            require("config.nvim-treesitter").setup()
+        end,
     },
     {
         "anuvyklack/pretty-fold.nvim",
-        config = function() require("config.pretty-fold").setup() end
+        config = function()
+            require("config.pretty-fold").setup()
+        end,
     },
     {
         "windwp/nvim-autopairs",
-        config = function() require("config.nvim-autopairs").setup() end
+        config = function()
+            require("config.nvim-autopairs").setup()
+        end,
     },
 
     -- User Interface & Experience
@@ -36,29 +46,52 @@ return {
     {
         "lukas-reineke/indent-blankline.nvim",
         event = "BufRead",
-        config = function() require("config.indent-blankline").setup() end
+        config = function()
+            require("config.indent-blankline").setup()
+        end,
+    },
+    {
+        "lewis6991/gitsigns.nvim",
+        event = "BufWinEnter",
+        config = function()
+            require("config.gitsigns").setup()
+        end,
     },
     {
         "kyazdani42/nvim-tree.lua",
-        opt = true,
         cmd = { "NvimTreeToggle" },
-        config = function() require("config.nvim-tree").setup() end
+        config = function()
+            require("config.nvim-tree").setup()
+        end,
     },
     {
         "numToStr/Comment.nvim",
-        config = function() require("config.comment").setup() end
+        config = function()
+            require("config.comment").setup()
+        end,
+    },
+    {
+        "nvim-telescope/telescope.nvim",
+        requires = { "nvim-telescope/telescope-ui-select.nvim" },
+        config = function()
+            require("config.telescope").setup()
+        end,
     },
 
     -- Language Server
     { "neovim/nvim-lspconfig" },
     {
         "williamboman/nvim-lsp-installer",
-        config = function() require("config.nvim-lsp-installer").setup() end
+        config = function()
+            require("config.nvim-lsp.installer").setup()
+        end,
     },
-    --[[ {
-        "ray-x/lsp_signature.nvim",
-        config = function() require("lsp_signature").setup({ bind = true, handler_opts = { border = "single" } }) end
-    }, ]]
+    {
+        "jose-elias-alvarez/null-ls.nvim",
+        config = function()
+            require("config.null-ls").setup()
+        end,
+    },
     {
         "hrsh7th/nvim-cmp",
         requires = {
@@ -70,13 +103,30 @@ return {
             "saadparwaiz1/cmp_luasnip",
             "onsails/lspkind-nvim",
         },
-        config = function() require("config.nvim-cmp").setup() end
+        config = function()
+            require("config.nvim-cmp").setup()
+        end,
+    },
+
+    -- Language Tools
+    {
+        "simrat39/rust-tools.nvim",
+        opt = true,
+        disable = not utils.is_contain_language("rust"),
+    },
+    {
+        "saecki/crates.nvim",
+        opt = true,
+        disable = not utils.is_contain_language("rust"),
+        event = { "BufRead Cargo.tom" },
     },
 
     -- Keyboard Bindings
     {
         "folke/which-key.nvim",
         event = "BufWinEnter",
-        config = function() require("config.which-key").setup() end
+        config = function()
+            require("config.which-key").setup()
+        end,
     },
 }

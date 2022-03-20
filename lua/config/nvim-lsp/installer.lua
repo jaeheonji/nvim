@@ -5,7 +5,7 @@ end
 
 local M = {}
 
-local lsp_config = require("config.lsp-config")
+local extends = require("config.nvim-lsp.installer-extends")
 local capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 local available_lsp = {
@@ -38,17 +38,27 @@ function M.setup()
             server:on_ready(function()
                 local opts = {
                     capabilities = capabilities,
-                    on_attach = lsp_config.on_attach,
+                    on_attach = extends.on_attach,
                     flags = { debounce_text_changes = 150 }
                 }
 
-                if lsp_config.enhance_server_opts[name] then
+                if extends.enhance_server_opts[name] then
                     -- Enhance the default opts with the server-specific ones
-                    lsp_config.enhance_server_opts[name](opts)
+                    extends.enhance_server_opts[name](opts)
                 end
 
                 if server.name == "rust_analyzer" then
                     -- Initialize the LSP via rust-tools instead
+                    local available, rust_tools = pcall(require, "rust-tools")
+                    if available then
+                        rust_tools.setup({
+                            tools = { hover_actions = { auto_focus = true } },
+                            server = vim.tbl_deep_extend("force", server:get_default_options(), opts)
+                        })
+                        server:attach_buffers()
+                    else
+                        server:setup(opts)
+                    end
                 else
                     server:setup(opts)
                 end

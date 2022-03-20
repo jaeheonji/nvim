@@ -24,7 +24,7 @@ function M.setup()
     opt.foldlevelstart = 1
 
     local languages = require("core.utils").config().languages
-    default.ensure_installed = vim.list_extend(default.ensure_installed, languages) 
+    default.ensure_installed = vim.list_extend(default.ensure_installed, languages)
 
     configs.setup(default)
 end
