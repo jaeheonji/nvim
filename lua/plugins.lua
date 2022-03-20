@@ -72,14 +72,22 @@ return {
     },
     {
         "nvim-telescope/telescope.nvim",
+        cmd = "Telescope",
         requires = { "nvim-telescope/telescope-ui-select.nvim" },
         config = function()
             require("config.telescope").setup()
         end,
     },
+    {
+        "j-hui/fidget.nvim",
+        config = function()
+            require("config.fidget").setup()
+        end,
+    },
 
     -- Language Server
     { "neovim/nvim-lspconfig" },
+    { "ray-x/lsp_signature.nvim" },
     {
         "williamboman/nvim-lsp-installer",
         config = function()

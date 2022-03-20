@@ -11,10 +11,12 @@ local capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protoco
 local available_lsp = {
     lua = { "sumneko_lua" },
     rust = { "rust_analyzer" },
-    python = { "pylsp", "pyright" }
+    python = { "pylsp", "pyright" },
 }
 
 function M.setup()
+    extends.setup_diagnostic()
+
     local servers = {}
     local names = vim.tbl_keys(available_lsp)
 
@@ -39,7 +41,7 @@ function M.setup()
                 local opts = {
                     capabilities = capabilities,
                     on_attach = extends.on_attach,
-                    flags = { debounce_text_changes = 150 }
+                    flags = { debounce_text_changes = 150 },
                 }
 
                 if extends.enhance_server_opts[name] then
@@ -53,7 +55,7 @@ function M.setup()
                     if available then
                         rust_tools.setup({
                             tools = { hover_actions = { auto_focus = true } },
-                            server = vim.tbl_deep_extend("force", server:get_default_options(), opts)
+                            server = vim.tbl_deep_extend("force", server:get_default_options(), opts),
                         })
                         server:attach_buffers()
                     else
