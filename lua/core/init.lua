@@ -3,9 +3,10 @@ local M = {}
 function M.setup()
     -- Load core modules
     local modules = {
-        "core.options"        
+        "core.options",
+        "core.key-bindings"
     }
-    
+
     for _, module in ipairs(modules) do
         local ok, callback = pcall(require, module)
         if not ok then
@@ -13,14 +14,15 @@ function M.setup()
         end
     end
 
+    -- Initialize defualt key bindings
+    require("core.key-bindings").init()
+
     -- Initialize the packer
     local packer = require("core.packer")
     packer.init()
 
     local plugins = require("plugins")
     packer.load(plugins)
-
-    require("colors").init()
 end
 
 return M

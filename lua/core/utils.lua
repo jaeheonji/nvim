@@ -7,4 +7,9 @@ function M.impatient()
     end
 end
 
+function M.config()
+    local config = require("core.config").config
+    return config
+end
+
 return M
