@@ -4,7 +4,7 @@ return {
     -- Packer can manage itself
     { "wbthomason/packer.nvim" },
 
-    -- Common plugins
+    -- Common Plugins
     { "lewis6991/impatient.nvim" },
     { "nvim-lua/plenary.nvim" },
     { "kyazdani42/nvim-web-devicons" },
@@ -19,55 +19,68 @@ return {
         end,
     },
 
-    -- Syntax
+    -- Editor
     {
         "nvim-treesitter/nvim-treesitter",
         run = ":TSUpdate",
         config = function()
-            require("config.nvim-treesitter").setup()
+            require("config.editor.nvim-treesitter").setup()
         end,
     },
     {
         "anuvyklack/pretty-fold.nvim",
         config = function()
-            require("config.pretty-fold").setup()
+            require("config.editor.pretty-fold").setup()
         end,
     },
     {
         "windwp/nvim-autopairs",
         config = function()
-            require("config.nvim-autopairs").setup()
+            require("config.editor.nvim-autopairs").setup()
         end,
     },
-
-    -- User Interface & Experience
-    { "kevinhwang91/nvim-hlslens", event = "BufRead" },
-    { "famiu/bufdelete.nvim", cmd = "Bdelete" },
     {
         "lukas-reineke/indent-blankline.nvim",
         event = "BufRead",
         config = function()
-            require("config.indent-blankline").setup()
+            require("config.editor.indent-blankline").setup()
         end,
+    },
+
+    -- Basic Interface
+    {
+        "kyazdani42/nvim-tree.lua",
+        cmd = { "NvimTreeToggle" },
+        config = function()
+            require("config.interface.nvim-tree").setup()
+        end,
+    },
+    {
+        "akinsho/bufferline.nvim",
+        event = "BufWinEnter",
+        config = function()
+            require("config.interface.bufferline").setup()
+        end,
+    },
+
+    -- Utility
+    { "kevinhwang91/nvim-hlslens", event = "BufRead" },
+    { "famiu/bufdelete.nvim", cmd = "Bdelete" },
+    {
+        "simrat39/symbols-outline.nvim",
+        cmd = "SymbolsOutline",
     },
     {
         "lewis6991/gitsigns.nvim",
         event = "BufWinEnter",
         config = function()
-            require("config.gitsigns").setup()
-        end,
-    },
-    {
-        "kyazdani42/nvim-tree.lua",
-        cmd = { "NvimTreeToggle" },
-        config = function()
-            require("config.nvim-tree").setup()
+            require("config.utils.gitsigns").setup()
         end,
     },
     {
         "numToStr/Comment.nvim",
         config = function()
-            require("config.comment").setup()
+            require("config.utils.comment").setup()
         end,
     },
     {
@@ -75,35 +88,31 @@ return {
         cmd = "Telescope",
         requires = { "nvim-telescope/telescope-ui-select.nvim" },
         config = function()
-            require("config.telescope").setup()
+            require("config.utils.telescope").setup()
         end,
     },
     {
         "j-hui/fidget.nvim",
         config = function()
-            require("config.fidget").setup()
+            require("config.utils.fidget").setup()
         end,
-    },
-    {
-        "simrat39/symbols-outline.nvim",
-        cmd = "SymbolsOutline",
     },
     {
         "folke/trouble.nvim",
         cmd = "TroubleToggle",
         config = function()
-            require("config.trouble").setup()
+            require("config.utils.trouble").setup()
         end,
     },
     {
         "folke/todo-comments.nvim",
         cmd = { "TodoLocList", "TodoTelescope", "TodoQuickFix" },
         config = function()
-            require("config.todo-comments").setup()
+            require("config.utils.todo-comments").setup()
         end,
     },
 
-    -- Language Server
+    -- LSP (Language Server Protocol)
     { "neovim/nvim-lspconfig" },
     { "ray-x/lsp_signature.nvim" },
     {
@@ -115,7 +124,7 @@ return {
     {
         "jose-elias-alvarez/null-ls.nvim",
         config = function()
-            require("config.null-ls").setup()
+            require("config.nvim-lsp.null-ls").setup()
         end,
     },
     {
@@ -130,11 +139,11 @@ return {
             "onsails/lspkind-nvim",
         },
         config = function()
-            require("config.nvim-cmp").setup()
+            require("config.nvim-lsp.nvim-cmp").setup()
         end,
     },
 
-    -- Language Tools
+    -- Language Extensions
     {
         "simrat39/rust-tools.nvim",
         opt = true,
@@ -145,6 +154,9 @@ return {
         opt = true,
         disable = not utils.is_contain_language("rust"),
         event = { "BufRead Cargo.tom" },
+        config = function()
+            require("config.language.crates").setup()
+        end,
     },
 
     -- Keyboard Bindings
