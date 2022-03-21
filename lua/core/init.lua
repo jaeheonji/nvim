@@ -4,7 +4,7 @@ function M.setup()
     -- Load core modules
     local modules = {
         "core.options",
-        "core.key-bindings"
+        "core.key-bindings",
     }
 
     for _, module in ipairs(modules) do

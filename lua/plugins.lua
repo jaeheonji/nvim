@@ -9,13 +9,13 @@ return {
     { "nvim-lua/plenary.nvim" },
     { "kyazdani42/nvim-web-devicons" },
 
-    -- Lush for Neovim themes
-    { "rktjmp/lush.nvim" },
+    -- Dracula theme
     {
         "dracula/vim",
         as = "dracula",
         config = function()
             vim.cmd([[ colorscheme dracula ]])
+            require("core.colors").init()
         end,
     },
 
@@ -53,6 +53,7 @@ return {
         cmd = { "NvimTreeToggle" },
         config = function()
             require("config.interface.nvim-tree").setup()
+            require("core.colors").nvim_tree()
         end,
     },
     {

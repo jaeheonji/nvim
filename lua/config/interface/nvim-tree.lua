@@ -28,7 +28,7 @@ g.nvim_tree_respect_buf_cwd = 1
 local default = {
     view = {
         width = 40,
-        side = "right",
+        side = "left",
         mappings = {
             list = {
                 { key = "v", cb = tree_cb("vsplit") },
