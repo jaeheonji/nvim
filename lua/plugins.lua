@@ -61,11 +61,34 @@ return {
         config = function()
             require("config.interface.bufferline").setup()
         end,
+        setup = function()
+            require("core.key-bindings").bufferline()
+        end,
+    },
+    {
+        "feline-nvim/feline.nvim",
+        config = function()
+            require("config.interface.feline").setup()
+        end,
+    },
+    {
+        "stevearc/dressing.nvim",
+        config = function()
+            require("config.interface.dressing").setup()
+        end,
+    },
+    {
+        "CosmicNvim/cosmic-ui",
+        requires = { "MunifTanjim/nui.nvim" },
+        config = function()
+            require("config.interface.cosmic-ui").setup()
+        end,
     },
 
     -- Utility
     { "kevinhwang91/nvim-hlslens", event = "BufRead" },
     { "famiu/bufdelete.nvim", cmd = "Bdelete" },
+    -- { "mrjones2014/legendary.nvim", cmd = "Legendary" },
     {
         "simrat39/symbols-outline.nvim",
         cmd = "SymbolsOutline",
@@ -86,7 +109,6 @@ return {
     {
         "nvim-telescope/telescope.nvim",
         cmd = "Telescope",
-        requires = { "nvim-telescope/telescope-ui-select.nvim" },
         config = function()
             require("config.utils.telescope").setup()
         end,
@@ -109,6 +131,13 @@ return {
         cmd = { "TodoLocList", "TodoTelescope", "TodoQuickFix" },
         config = function()
             require("config.utils.todo-comments").setup()
+        end,
+    },
+    {
+        "max397574/better-escape.nvim",
+        event = "BufRead",
+        config = function()
+            require("config.utils.better-escape").setup()
         end,
     },
 

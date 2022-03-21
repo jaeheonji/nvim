@@ -13,18 +13,10 @@ local default = {
             i = { ["<ESC>"] = require("telescope.actions").close },
         },
     },
-    extensions = {
-        ["ui-select"] = {
-            require("telescope.themes").get_cursor(),
-        },
-    },
 }
 
 function M.setup()
     telescope.setup(default)
-
-    -- Load Extensions
-    telescope.load_extension("ui-select")
 end
 
 return M

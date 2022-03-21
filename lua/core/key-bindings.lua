@@ -4,8 +4,6 @@ local map = vim.api.nvim_set_keymap
 local default_opts = { noremap = true, silent = true }
 
 function M.init()
-    map("i", "ii", "<ESC>", default_opts) 
-
     -- Tab & Window Navigations
     map("n", "s", "<C-w>", default_opts)
     map("n", "<C-h>", "<C-w>h", default_opts)
@@ -26,6 +24,13 @@ function M.init()
     map("n", "<M-h>", ":vert res -10<CR>", default_opts)
     map("n", "<M-k>", ":res +10<CR>", default_opts)
     map("n", "<M-j>", ":res -10<CR>", default_opts)
+end
+
+function M.bufferline()
+    map("n", "<S-h>", ":BufferLineMovePrev<CR>", default_opts)
+    map("n", "<S-j>", ":BufferLineCyclePrev<CR>", default_opts)
+    map("n", "<S-k>", ":BufferLineCycleNext<CR>", default_opts)
+    map("n", "<S-l>", ":BufferLineMoveNext<CR>", default_opts)
 end
 
 return M
