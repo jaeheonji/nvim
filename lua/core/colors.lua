@@ -33,8 +33,8 @@ function M.init()
     highlight("EndOfBuffer", { fg = M.palette.bg })
     highlight("CursorLineNr", { fg = M.palette.purple })
 
-    highlight("StatusLine", { fg = M.palette.bg, bg = M.palette.bgdark })
-    highlight("StatusLineNC", { fg = M.palette.bg, bg = M.palette.bgdark })
+    highlight("StatusLine", { fg = M.palette.bgdarker, bg = M.palette.bgdarker })
+    highlight("StatusLineNC", { fg = M.palette.bgdarker, bg = M.palette.bgdarker })
 
     highlight("VertSplit", { fg = M.palette.bg, bg = M.palette.purple })
 
@@ -48,6 +48,9 @@ function M.nvim_tree()
 
     highlight("NvimTreeVertSplit", { fg = M.palette.bgdarker, bg = M.palette.bgdarker })
     highlight("NvimTreeRootFolder", { fg = M.palette.pink, style = "underline" })
+
+    highlight("NvimTreeStatusline", { fg = M.palette.bgdarker, bg = M.palette.bgdarker })
+    highlight("NvimTreeStatuslineNC", { fg = M.palette.bgdarker, bg = M.palette.bgdarker })
 end
 
 return M

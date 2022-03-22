@@ -39,11 +39,13 @@ local default = {
     options = {
         tab_size = 24,
         numbers = function(style)
-            return style.id
+            return style.ordinal
         end,
         offsets = {
             { filetype = "NvimTree", text = " 🌲 EXPLORER", text_align = "left", padding = 1 },
         },
+        diagnostics = "nvim_lsp",
+        diagnostics_update_in_insert = true,
     },
 }
 
