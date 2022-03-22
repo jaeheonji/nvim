@@ -3,6 +3,8 @@ local dracula = require("core.colors").palette
 local git = require("feline.providers.git")
 local vi_mode = require("feline.providers.vi_mode")
 
+local gps = require("nvim-gps")
+
 local function carriage_return()
     local os = vim.bo.fileformat:upper()
     if os == "UNIX" then
@@ -61,6 +63,14 @@ return {
                 provider = "line_percentage",
                 left_sep = " ",
                 right_sep = " ",
+            },
+            {
+                provider = function()
+                    return gps.get_location()
+                end,
+                enabled = function()
+                    return gps.is_available()
+                end,
             },
         },
         -- [2]

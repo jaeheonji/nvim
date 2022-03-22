@@ -31,5 +31,5 @@ opt.smartcase = true
 -- for symbols-outline
 vim.g.symbols_outline = {
     auto_preview = false,
-    width = 30,
+    width = 15,
 }
