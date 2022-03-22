@@ -44,8 +44,6 @@ local default = {
         offsets = {
             { filetype = "NvimTree", text = " 🌲 EXPLORER", text_align = "left", padding = 1 },
         },
-        diagnostics = "nvim_lsp",
-        diagnostics_update_in_insert = true,
     },
 }
 

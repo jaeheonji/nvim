@@ -45,6 +45,7 @@ local normal = {
         t = { "<CMD>NvimTreeToggle<CR>", "file-tree" },
         s = { "<CMD>SymbolsOutline<CR>", "symbols-outline" },
         d = { "<CMD>TroubleToggle<CR>", "diagnostic-lists" },
+        m = { "<CMD>MinimapToggle<CR>", "minimap" },
     },
     q = {
         name = "Quit",

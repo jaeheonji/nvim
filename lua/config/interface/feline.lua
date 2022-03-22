@@ -28,7 +28,7 @@ local default = {
         NONE = dracula.comment,
     },
     disable = {
-        filetypes = { "NvimTree", "Outline" },
+        filetypes = { "NvimTree", "Outline", "minimap" },
     },
 }
 

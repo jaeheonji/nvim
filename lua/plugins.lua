@@ -20,6 +20,7 @@ return {
     },
 
     -- Editor
+    { "wfxr/minimap.vim", cmd = "MinimapToggle" },
     {
         "nvim-treesitter/nvim-treesitter",
         run = ":TSUpdate",
@@ -68,7 +69,14 @@ return {
     },
     {
         "feline-nvim/feline.nvim",
-        requires = { "SmiteshP/nvim-gps" },
+        requires = {
+            {
+                "SmiteshP/nvim-gps",
+                config = function()
+                    require("config.nvim-lsp.nvim-gps").setup()
+                end,
+            },
+        },
         config = function()
             require("config.interface.feline").setup()
         end,
