@@ -127,6 +127,7 @@ return {
         "j-hui/fidget.nvim",
         config = function()
             require("config.utils.fidget").setup()
+            require("core.colors").fidget()
         end,
     },
     {

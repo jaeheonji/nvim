@@ -28,6 +28,7 @@ M.palette = {
 function M.init()
     if transparent then
         highlight("Normal", { bg = "NONE" })
+        highlight("NonText", { bg = "NONE" })
     end
 
     highlight("EndOfBuffer", { fg = M.palette.bg })
@@ -38,7 +39,8 @@ function M.init()
 
     highlight("VertSplit", { fg = M.palette.bg, bg = M.palette.purple })
 
-    highlight("FloatBorder", { fg = M.palette.purple })
+    highlight("FloatBorder", { fg = M.palette.purple, bg = M.palette.bgdarker })
+    highlight("NormalFloat", { bg = M.palette.bgdarker })
 end
 
 function M.nvim_tree()
@@ -51,6 +53,11 @@ function M.nvim_tree()
 
     highlight("NvimTreeStatusline", { fg = M.palette.bgdarker, bg = M.palette.bgdarker })
     highlight("NvimTreeStatuslineNC", { fg = M.palette.bgdarker, bg = M.palette.bgdarker })
+end
+
+function M.fidget()
+    highlight("FidgetTitle", { fg = M.palette.green, style = "bold" })
+    highlight("FidgetTask", { fg = M.palette.subtle })
 end
 
 return M

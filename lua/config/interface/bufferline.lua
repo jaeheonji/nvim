@@ -29,8 +29,8 @@ local default = {
         indicator_selected = { guifg = palette.pink },
 
         -- modified
-        modified = { guifg = palette.comment },
-        modified_visible = { guifg = palette.comment },
+        modified = { guifg = palette.comment, guibg = palette.bgdark },
+        modified_visible = { guifg = palette.comment, guibg = palette.bgdark },
         modified_selected = { guifg = palette.fg },
 
         -- tab
