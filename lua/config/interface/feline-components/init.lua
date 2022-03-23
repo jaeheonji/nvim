@@ -59,6 +59,11 @@ return {
                 left_sep = " ",
                 right_sep = " ",
             },
+            { -- Percentage
+                provider = "line_percentage",
+                left_sep = " ",
+                right_sep = " ",
+            },
             { -- nvim-gps
                 provider = function()
                     return gps.get_location()

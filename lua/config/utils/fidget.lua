@@ -5,7 +5,9 @@ end
 
 local M = {}
 
-local default = {}
+local default = {
+    window = { blend = 0 },
+}
 
 function M.setup()
     fidget.setup(default)

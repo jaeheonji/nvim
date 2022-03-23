@@ -28,7 +28,6 @@ M.palette = {
 function M.init()
     if transparent then
         highlight("Normal", { bg = "NONE" })
-        highlight("NonText", { bg = "NONE" })
     end
 
     highlight("EndOfBuffer", { fg = M.palette.bg })
@@ -56,8 +55,12 @@ function M.nvim_tree()
 end
 
 function M.fidget()
-    highlight("FidgetTitle", { fg = M.palette.green, style = "bold" })
-    highlight("FidgetTask", { fg = M.palette.subtle })
+    highlight("FidgetTitle", { fg = M.palette.purple, style = "bold" })
+    highlight("FidgetTask", { fg = M.palette.fg })
+end
+
+function M.which_key()
+    highlight("WhichKeyFloat", { bg = M.palette.bgdark })
 end
 
 return M

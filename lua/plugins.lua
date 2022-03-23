@@ -20,7 +20,8 @@ return {
     },
 
     -- Editor
-    { "wfxr/minimap.vim", cmd = "MinimapToggle" },
+    { "andymass/vim-matchup" },
+    { "mg979/vim-visual-multi" },
     {
         "nvim-treesitter/nvim-treesitter",
         run = ":TSUpdate",
@@ -50,6 +51,12 @@ return {
 
     -- Basic Interface
     {
+        "goolord/alpha-nvim",
+        config = function()
+            require("config.interface.alpha").setup()
+        end,
+    },
+    {
         "kyazdani42/nvim-tree.lua",
         cmd = { "NvimTreeToggle" },
         config = function()
@@ -73,7 +80,7 @@ return {
             {
                 "SmiteshP/nvim-gps",
                 config = function()
-                    require("config.nvim-lsp.nvim-gps").setup()
+                    require("config.nvim-lsp.gps").setup()
                 end,
             },
         },
@@ -99,6 +106,12 @@ return {
     { "kevinhwang91/nvim-hlslens", event = "BufRead" },
     { "famiu/bufdelete.nvim", cmd = "Bdelete" },
     -- { "mrjones2014/legendary.nvim", cmd = "Legendary" },
+    {
+        "luukvbaal/stabilize.nvim",
+        config = function()
+            require("config.utils.stabilize").setup()
+        end,
+    },
     {
         "simrat39/symbols-outline.nvim",
         cmd = "SymbolsOutline",
@@ -179,7 +192,7 @@ return {
             "onsails/lspkind-nvim",
         },
         config = function()
-            require("config.nvim-lsp.nvim-cmp").setup()
+            require("config.nvim-lsp.cmp").setup()
         end,
     },
 
@@ -205,6 +218,7 @@ return {
         event = "BufWinEnter",
         config = function()
             require("config.which-key").setup()
+            require("core.colors").which_key()
         end,
     },
 }

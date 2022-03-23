@@ -45,7 +45,6 @@ local normal = {
         t = { "<CMD>NvimTreeToggle<CR>", "file-tree" },
         s = { "<CMD>SymbolsOutline<CR>", "symbols-outline" },
         d = { "<CMD>TroubleToggle<CR>", "diagnostic-lists" },
-        m = { "<CMD>MinimapToggle<CR>", "minimap" },
     },
     q = {
         name = "Quit",
@@ -68,19 +67,9 @@ local normal = {
         a = { "<CMD>lua require('cosmic-ui').code_actions()<CR>", "code-action" },
         n = { "<CMD>lua require('cosmic-ui').rename()<CR>", "rename" },
 
-        d = {
-            name = "definition",
-            d = { "<CMD>lua vim.lsp.buf.definition()<CR>", "open" },
-            s = { "<CMD>sp<CR><CMD>lua vim.lsp.buf.definition()<CR>", "open-split" },
-            v = { "<CMD>vsp<CR><CMD>lua vim.lsp.buf.definition()<CR>", "open-vsplit" },
-            p = { "<CMD>lua require('goto-preview').goto_preview_definition()<CR>", "definition-preview" },
-        },
+        d = { "<CMD>lua vim.lsp.buf.definition()<CR>", "definition" },
         D = { "<CMD>lua vim.lsp.buf.declaration()<CR>", "declaration" },
-        i = {
-            name = "implementation",
-            i = { "<CMD>lua vim.lsp.buf.implementation()<CR>", "open" },
-            p = { "<CMD>lua require('goto-preview').goto_preview_implementation()<CR>", "implementation-preview" },
-        },
+        i = { "<CMD>lua vim.lsp.buf.implementation()<CR>", "implementation" },
         r = { "<CMD>Telescope lsp_references theme=dropdown<CR>", "references" },
 
         h = { "<CMD>lua vim.lsp.buf.hover()<CR>", "hover" },

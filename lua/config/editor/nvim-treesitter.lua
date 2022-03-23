@@ -13,7 +13,9 @@ local default = {
     -- Install languages synchronously
     sync_install = true,
 
-    highlight = { enable = true }
+    highlight = { enable = true },
+
+    matchup = { enable = true },
 }
 
 function M.setup()

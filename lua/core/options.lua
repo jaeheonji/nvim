@@ -33,9 +33,3 @@ vim.g.symbols_outline = {
     auto_preview = false,
     width = 15,
 }
-
--- for minimap.vim
-vim.g.minimap_width = 15
-vim.g.minimap_highlight_range = 1
-vim.g.minimap_highlight_search = 1
-vim.g.minimap_git_colors = 1
