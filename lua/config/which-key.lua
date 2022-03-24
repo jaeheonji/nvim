@@ -17,7 +17,7 @@ local default = {
 
 -- NORMAL mode
 local normal = {
-    ["?"] = { "<CMD>Telescope help_tags<CR>", "find-help-tags" },
+    ["?"] = { "<CMD>Telescope help_tags theme=dropdown<CR>", "find-help-tags" },
     ["/"] = { "<CMD>HopPattern<CR>", "hop-pattern" },
     [":"] = { "<CMD>HopLine<CR>", "hop-line" },
     ["1"] = { "1gt", "window-1" },
@@ -31,20 +31,21 @@ local normal = {
     ["9"] = { "2gt", "window-9" },
     f = {
         name = "Files",
-        f = { "<CMD>Telescope find_files<CR>", "find-files" },
+        f = { "<CMD>Telescope find_files theme=dropdown<CR>", "find-files" },
         b = { "<CMD>Telescope marks<CR>", "find-bookmars" },
         o = { "<CMD>NvimTreeFindFile<CR>", "find-file-in-file-tree" },
         s = { "<CMD>w<CR>", "save-file" },
         S = { "<CMD>wa<CR>", "save-all-files" },
         r = { "<CMD>lua require('spectre').open()<CR>", "search-and-replace" },
-        w = { "<CMD>Telescope live_grep<CR>", "find-words" },
-        h = { "<CMD>Telescope oldfiles<CR>", "open-file-history" },
+        w = { "<CMD>Telescope live_grep theme=dropdown<CR>", "find-words" },
+        h = { "<CMD>Telescope oldfiles theme=dropdown<CR>", "open-file-history" },
     },
     t = {
         name = "Toggles",
         t = { "<CMD>NvimTreeToggle<CR>", "file-tree" },
         s = { "<CMD>SymbolsOutline<CR>", "symbols-outline" },
         d = { "<CMD>TroubleToggle<CR>", "diagnostic-lists" },
+        z = { "<CMD>ZenMode<CR>", "zen-mode" },
     },
     q = {
         name = "Quit",
@@ -58,7 +59,7 @@ local normal = {
         t = {
             name = "Todo",
             l = { "<CMD>TodoLocList<CR>", "todo-list" },
-            t = { "<CMD>TodoTelescope<CR>", "todo-telescope" },
+            t = { "<CMD>TodoTelescope theme=dropdown<CR>", "todo-telescope" },
             q = { "<CMD>TodoQuickFix<CR>", "todo-quick-fix" },
         },
     },
@@ -80,7 +81,7 @@ local normal = {
         name = "Buffers",
         d = { "<CMD>Bdelete<CR>", "delete-buffer" },
         D = { "<CMD>Bdelete!<CR>", "delete-buffer-without-saving" },
-        b = { "<CMD>Telescope buffers<CR>", "find-buffers" },
+        b = { "<CMD>Telescope buffers theme=dropdown<CR>", "find-buffers" },
     },
     w = {
         name = "Windows",

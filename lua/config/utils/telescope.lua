@@ -5,12 +5,18 @@ end
 
 local M = {}
 
+local actions = require("telescope.actions")
+
 local default = {
     defaults = {
+        winblend = 20,
         prompt_prefix = " > ",
         selection_caret = " > ",
         mappings = {
-            i = { ["<ESC>"] = require("telescope.actions").close },
+            i = {
+                ["<ESC>"] = actions.close,
+                ["<C-s>"] = actions.select_horizontal,
+            },
         },
     },
 }

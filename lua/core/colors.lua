@@ -38,8 +38,8 @@ function M.init()
 
     highlight("VertSplit", { fg = M.palette.bg, bg = M.palette.purple })
 
-    highlight("FloatBorder", { fg = M.palette.purple, bg = M.palette.bgdarker })
-    highlight("NormalFloat", { bg = M.palette.bgdarker })
+    highlight("FloatBorder", { fg = M.palette.purple, bg = M.palette.bgdark })
+    highlight("NormalFloat", { bg = M.palette.bgdark })
 end
 
 function M.nvim_tree()
@@ -61,6 +61,11 @@ end
 
 function M.which_key()
     highlight("WhichKeyFloat", { bg = M.palette.bgdark })
+end
+
+function M.telescope()
+    highlight("TelescopeNormal", { bg = M.palette.bgdark })
+    highlight("TelescopeBorder", { fg = M.palette.purple, bg = M.palette.bgdark })
 end
 
 return M

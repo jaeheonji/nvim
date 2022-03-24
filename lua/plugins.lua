@@ -58,7 +58,7 @@ return {
     },
     {
         "kyazdani42/nvim-tree.lua",
-        cmd = { "NvimTreeToggle" },
+        cmd = { "NvimTreeToggle", "NvimTreeFindFile" },
         config = function()
             require("config.interface.nvim-tree").setup()
             require("core.colors").nvim_tree()
@@ -134,6 +134,7 @@ return {
         cmd = "Telescope",
         config = function()
             require("config.utils.telescope").setup()
+            require("core.colors").telescope()
         end,
     },
     {
@@ -162,6 +163,13 @@ return {
         event = "BufRead",
         config = function()
             require("config.utils.better-escape").setup()
+        end,
+    },
+    {
+        "folke/zen-mode.nvim",
+        cmd = "ZenMode",
+        config = function()
+            require("config.utils.zen-mode").setup()
         end,
     },
 
