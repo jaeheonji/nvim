@@ -29,13 +29,13 @@ function M.on_attach(client, bufnr, disable_formatting)
     if present then
         lsp_signature.on_attach({
             bind = true,
-            handler_opts = { border = "rounded" },
+            handler_opts = { border = "single" },
         }, bufnr)
     end
 end
 
 M.handlers = {
-    ["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" }),
+    ["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "single" }),
 }
 
 M.enhance_server_opts = {

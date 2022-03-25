@@ -70,6 +70,7 @@ local normal = {
 
         d = { "<CMD>lua vim.lsp.buf.definition()<CR>", "definition" },
         D = { "<CMD>lua vim.lsp.buf.declaration()<CR>", "declaration" },
+        e = { "<CMD>lua vim.diagnostic.open_float({ border = 'single' })<CR>", "diagnostic" },
         i = { "<CMD>lua vim.lsp.buf.implementation()<CR>", "implementation" },
         r = { "<CMD>Telescope lsp_references theme=dropdown<CR>", "references" },
 
