@@ -5,7 +5,7 @@ M.config = {
     transparent = true,
 
     -- This item affects treesitter and LSP.
-    languages = { "lua", "fish", "rust" },
+    languages = { "lua" },
 }
 
 return M

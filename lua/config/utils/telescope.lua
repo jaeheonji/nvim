@@ -21,6 +21,11 @@ local default = {
                 ["<C-s>"] = actions.select_horizontal,
             },
         },
+        pickers = {
+            find_files = {
+                find_command = { "fd", "--type", "f", "--strip-cwd-prefix" },
+            },
+        },
     },
 }
 
