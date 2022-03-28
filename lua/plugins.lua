@@ -1,5 +1,9 @@
 local utils = require("core.utils")
 
+local support_language = {
+    rust = utils.is_contain_language("rust"),
+}
+
 return {
     -- Packer can manage itself
     { "wbthomason/packer.nvim" },
@@ -207,13 +211,13 @@ return {
     -- Language Extensions
     {
         "simrat39/rust-tools.nvim",
-        opt = true,
-        disable = not utils.is_contain_language("rust"),
+        opt = not support_language.rust,
+        disable = not support_language.rust,
     },
     {
         "saecki/crates.nvim",
-        opt = true,
-        disable = not utils.is_contain_language("rust"),
+        opt = not support_language.rust,
+        disable = not support_language.rust,
         event = { "BufRead Cargo.tom" },
         config = function()
             require("config.language.crates").setup()
