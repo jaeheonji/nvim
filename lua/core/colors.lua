@@ -68,4 +68,12 @@ function M.telescope()
     highlight("TelescopeBorder", { fg = M.palette.purple, bg = M.palette.bgdark })
 end
 
+function M.hlslens()
+    highlight("Search", { fg = "NONE", bg = M.palette.selection })
+    highlight("IncSearch", { fg = M.palette.red, bg = "NONE", style = "bold,underline" })
+
+    highlight("HlSearchLens", { fg = M.palette.purple, bg = "NONE", style = "bold" })
+    highlight("HlSearchLensNear", { fg = M.palette.red, bg = "NONE", style = "bold,underline" })
+end
+
 return M

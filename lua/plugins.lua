@@ -107,9 +107,15 @@ return {
     },
 
     -- Utility
-    { "kevinhwang91/nvim-hlslens", event = "BufRead" },
     { "famiu/bufdelete.nvim", cmd = "Bdelete" },
     -- { "mrjones2014/legendary.nvim", cmd = "Legendary" },
+    {
+        "kevinhwang91/nvim-hlslens",
+        event = "BufRead",
+        config = function()
+            require("core.colors").hlslens()
+        end,
+    },
     {
         "luukvbaal/stabilize.nvim",
         config = function()

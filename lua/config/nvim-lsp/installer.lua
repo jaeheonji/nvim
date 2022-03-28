@@ -54,7 +54,7 @@ function M.setup()
                     local available, rust_tools = pcall(require, "rust-tools")
                     if available then
                         rust_tools.setup({
-                            tools = { hover_actions = { auto_focus = true } },
+                            tools = { hover_actions = { auto_focus = true, border = "single" } },
                             server = vim.tbl_deep_extend("force", server:get_default_options(), opts),
                         })
                         server:attach_buffers()
