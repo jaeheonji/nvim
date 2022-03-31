@@ -43,10 +43,7 @@ local default = {
         ["<CR>"] = cmp.mapping.confirm({ select = true }),
     },
 
-    sources = cmp.config.sources(
-        { { name = "nvim_lsp" }, { name = "luasnip" } },
-        { { name = "buffer" } }
-    ),
+    sources = cmp.config.sources({ { name = "nvim_lsp" }, { name = "luasnip" } }, { { name = "buffer" } }),
 }
 
 function M.setup()
@@ -54,11 +51,11 @@ function M.setup()
 
     -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
     cmp.setup.cmdline(":", {
-        sources = cmp.config.sources(
-            { { name = "path" } },
-            { { name = "cmdline" } }
-        ),
+        sources = cmp.config.sources({ { name = "path" } }, { { name = "cmdline" } }),
     })
+
+    -- Loading Snippets
+    require("luasnip.loaders.from_vscode").lazy_load()
 end
 
 return M
