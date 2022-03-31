@@ -1,4 +1,5 @@
 local utils = require("core.utils")
+local config = utils.config()
 
 local support_language = {
     rust = utils.is_contain_language("rust"),
@@ -108,7 +109,6 @@ return {
 
     -- Utility
     { "famiu/bufdelete.nvim", cmd = "Bdelete" },
-    -- { "mrjones2014/legendary.nvim", cmd = "Legendary" },
     {
         "kevinhwang91/nvim-hlslens",
         event = "BufRead",
@@ -120,6 +120,15 @@ return {
         "luukvbaal/stabilize.nvim",
         config = function()
             require("config.utils.stabilize").setup()
+        end,
+    },
+    {
+        "mrjones2014/smart-splits.nvim",
+        opt = not config.use_smart_split,
+        disable = not config.use_smart_split,
+        config = function()
+            require("config.utils.smart-splits").setup()
+            require("core.key-bindings").smart_splits()
         end,
     },
     {
