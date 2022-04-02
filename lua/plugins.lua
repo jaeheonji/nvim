@@ -80,17 +80,9 @@ return {
         end,
     },
     {
-        "feline-nvim/feline.nvim",
-        requires = {
-            {
-                "SmiteshP/nvim-gps",
-                config = function()
-                    require("config.nvim-lsp.gps").setup()
-                end,
-            },
-        },
+        "nvim-lualine/lualine.nvim",
         config = function()
-            require("config.interface.feline").setup()
+            require("config.interface.lualine").setup()
         end,
     },
     {
