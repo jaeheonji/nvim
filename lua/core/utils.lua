@@ -12,6 +12,15 @@ function M.config()
     return config
 end
 
+function M.transparentify(color)
+    local transparent = M.config().transparent
+    if transparent then
+        return "NONE"
+    else
+        return color
+    end
+end
+
 function M.is_contain_language(name)
     local languages = M.config().languages
     if vim.tbl_contains(languages, name) then

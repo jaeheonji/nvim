@@ -1,15 +1,7 @@
-local transparent = require("core.utils").config().transparent
+local transparentify = require("core.utils").transparentify
 local highlight = require("core.utils").highlight
 
 local M = {}
-
-local function transparent_bg(color)
-    if transparent then
-        return "NONE"
-    else
-        return color
-    end
-end
 
 M.palette = {
     fg = "#F8F8F2",
@@ -36,46 +28,44 @@ M.palette = {
 M.lualine_theme = {
     normal = {
         a = { fg = M.palette.fg, bg = M.palette.purple, gui = "bold" },
-        b = { fg = M.palette.fg, bg = transparent_bg(M.palette.bgdarker) },
-        c = { fg = M.palette.fg, bg = transparent_bg(M.palette.bgdarker) },
+        b = { fg = M.palette.fg, bg = transparentify(M.palette.bgdarker) },
+        c = { fg = M.palette.fg, bg = transparentify(M.palette.bgdarker) },
     },
     insert = {
         a = { fg = M.palette.fg, bg = M.palette.green, gui = "bold" },
-        b = { fg = M.palette.fg, bg = transparent_bg(M.palette.bgdarker) },
-        c = { fg = M.palette.fg, bg = transparent_bg(M.palette.bgdarker) },
+        b = { fg = M.palette.fg, bg = transparentify(M.palette.bgdarker) },
+        c = { fg = M.palette.fg, bg = transparentify(M.palette.bgdarker) },
     },
     visual = {
         a = { fg = M.palette.fg, bg = M.palette.yellow, gui = "bold" },
-        b = { fg = M.palette.fg, bg = transparent_bg(M.palette.bgdarker) },
-        c = { fg = M.palette.fg, bg = transparent_bg(M.palette.bgdarker) },
+        b = { fg = M.palette.fg, bg = transparentify(M.palette.bgdarker) },
+        c = { fg = M.palette.fg, bg = transparentify(M.palette.bgdarker) },
     },
     replace = {
         a = { fg = M.palette.fg, bg = M.palette.orange, gui = "bold" },
-        b = { fg = M.palette.fg, bg = transparent_bg(M.palette.bgdarker) },
-        c = { fg = M.palette.fg, bg = transparent_bg(M.palette.bgdarker) },
+        b = { fg = M.palette.fg, bg = transparentify(M.palette.bgdarker) },
+        c = { fg = M.palette.fg, bg = transparentify(M.palette.bgdarker) },
     },
     command = {
         a = { fg = M.palette.fg, bg = M.palette.pink, gui = "bold" },
-        b = { fg = M.palette.fg, bg = transparent_bg(M.palette.bgdarker) },
-        c = { fg = M.palette.fg, bg = transparent_bg(M.palette.bgdarker) },
+        b = { fg = M.palette.fg, bg = transparentify(M.palette.bgdarker) },
+        c = { fg = M.palette.fg, bg = transparentify(M.palette.bgdarker) },
     },
     inactive = {
         a = { fg = M.palette.fg, bg = M.palette.purple, gui = "bold" },
-        b = { fg = M.palette.fg, bg = transparent_bg(M.palette.bgdarker) },
-        c = { fg = M.palette.fg, bg = transparent_bg(M.palette.bgdarker) },
+        b = { fg = M.palette.fg, bg = transparentify(M.palette.bgdarker) },
+        c = { fg = M.palette.fg, bg = transparentify(M.palette.bgdarker) },
     },
 }
 
 function M.init()
-    if transparent then
-        highlight("Normal", { bg = "NONE" })
-    end
+    highlight("Normal", { bg = transparentify(M.palette.bg) })
 
     highlight("EndOfBuffer", { fg = M.palette.bg })
     highlight("CursorLineNr", { fg = M.palette.purple })
 
-    highlight("StatusLine", { fg = M.palette.bgdarker, bg = transparent_bg(M.palette.bgdarker) })
-    highlight("StatusLineNC", { fg = M.palette.bgdarker, bg = transparent_bg(M.palette.bgdarker) })
+    highlight("StatusLine", { fg = M.palette.bgdarker, bg = transparentify(M.palette.bgdarker) })
+    highlight("StatusLineNC", { fg = M.palette.bgdarker, bg = transparentify(M.palette.bgdarker) })
 
     highlight("VertSplit", { fg = M.palette.bg, bg = M.palette.purple })
 
