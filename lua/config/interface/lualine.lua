@@ -41,7 +41,7 @@ end
 
 local default = {
     options = {
-        theme = colors.lualine_theme,
+        theme = colors.lualine,
         component_separators = "",
         section_separators = "",
     },
@@ -94,6 +94,22 @@ local default = {
         },
         lualine_y = {},
         lualine_z = { spacer },
+    },
+    extensions = {
+        {
+            filetypes = { "neo-tree" },
+            sections = {
+                lualine_c = {
+                    {
+                        function()
+                            return "Neo Tree"
+                        end,
+                        icon = "פּ",
+                        color = { fg = colors.palette.pink, gui = "bold,italic" },
+                    },
+                },
+            },
+        },
     },
 }
 

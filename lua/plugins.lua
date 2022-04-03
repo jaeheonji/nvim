@@ -62,21 +62,12 @@ return {
         end,
     },
     {
-        "kyazdani42/nvim-tree.lua",
-        cmd = { "NvimTreeToggle", "NvimTreeFindFile" },
+        "nvim-neo-tree/neo-tree.nvim",
+        requires = { "MunifTanjim/nui.nvim" },
+        cmd = "Neotree",
         config = function()
-            require("config.interface.nvim-tree").setup()
-            require("core.colors").nvim_tree()
-        end,
-    },
-    {
-        "akinsho/bufferline.nvim",
-        event = "BufWinEnter",
-        config = function()
-            require("config.interface.bufferline").setup()
-        end,
-        setup = function()
-            require("core.key-bindings").bufferline()
+            require("config.interface.neo-tree").setup()
+            require("core.colors").neo_tree()
         end,
     },
     {

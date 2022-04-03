@@ -1,6 +1,8 @@
 local transparentify = require("core.utils").transparentify
 local highlight = require("core.utils").highlight
 
+local config = require("core.utils").config
+
 local M = {}
 
 M.palette = {
@@ -25,7 +27,7 @@ M.palette = {
     yellow = "#F1FA8C",
 }
 
-M.lualine_theme = {
+M.lualine = {
     normal = {
         a = { fg = M.palette.fg, bg = M.palette.purple, gui = "bold" },
         b = { fg = M.palette.fg, bg = transparentify(M.palette.bgdarker) },
@@ -67,22 +69,21 @@ function M.init()
     highlight("StatusLine", { fg = M.palette.bgdarker, bg = transparentify(M.palette.bgdarker) })
     highlight("StatusLineNC", { fg = M.palette.bgdarker, bg = transparentify(M.palette.bgdarker) })
 
-    highlight("VertSplit", { fg = M.palette.bg, bg = M.palette.purple })
+    highlight("VertSplit", { fg = M.palette.purple, bg = M.palette.bg, style = "NONE" })
 
     highlight("FloatBorder", { fg = M.palette.purple, bg = M.palette.bgdark })
     highlight("NormalFloat", { bg = M.palette.bgdark })
 end
 
-function M.nvim_tree()
-    highlight("NvimTreeNormal", { bg = M.palette.bgdarker })
-    highlight("NvimTreeNormalNC", { bg = M.palette.bgdarker })
-    highlight("NvimTreeEndOfBuffer", { fg = M.palette.bgdarker })
+function M.neo_tree()
+    highlight("NeoTreeNormal", { bg = transparentify(M.palette.bgdarker) })
+    highlight("NeoTreeNormalNC", { bg = transparentify(M.palette.bgdarker) })
 
-    highlight("NvimTreeVertSplit", { fg = M.palette.bgdarker, bg = M.palette.bgdarker })
-    highlight("NvimTreeRootFolder", { fg = M.palette.pink, style = "underline" })
-
-    highlight("NvimTreeStatusline", { fg = M.palette.bgdarker, bg = M.palette.bgdarker })
-    highlight("NvimTreeStatuslineNC", { fg = M.palette.bgdarker, bg = M.palette.bgdarker })
+    if config().transparent then
+        highlight("NeoTreeVertSplit", { fg = M.palette.purple, bg = "NONE", style = "NONE" })
+    else
+        highlight("NeoTreeVertSplit", { fg = M.palette.bgdarker, bg = M.palette.bgdarker })
+    end
 end
 
 function M.fidget()

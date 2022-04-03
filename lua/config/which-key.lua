@@ -51,7 +51,7 @@ local normal = {
     },
     v = {
         name = "Views",
-        e = { "<CMD>NvimTreeToggle<CR>", "Explorer" },
+        e = { "<CMD>Neotree toggle<CR>", "Explorer" },
         s = { "<CMD>SymbolsOutline<CR>", "Outline" },
         t = { "<CMD>TroubleToggle loclist<CR>", "Diagnostics" },
         z = { "<CMD>ZenMode<CR>", "ZenMode" },

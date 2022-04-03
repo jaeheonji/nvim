@@ -5,7 +5,11 @@ end
 
 local M = {}
 
-local default = {}
+local default = {
+    ignored_filetypes = {
+        "neo-tree",
+    },
+}
 
 function M.setup()
     smart_splits.setup(default)
