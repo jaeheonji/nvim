@@ -121,6 +121,12 @@ return {
     {
         "simrat39/symbols-outline.nvim",
         cmd = "SymbolsOutline",
+        config = function()
+            require("core.colors").symbols_outline()
+        end,
+        setup = function()
+            require("config.utils.symbols-outline").setup()
+        end,
     },
     {
         "lewis6991/gitsigns.nvim",

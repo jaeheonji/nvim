@@ -60,6 +60,10 @@ M.which_key = function()
     highlight("WhichKeyFloat", { bg = M.palette.bgdark })
 end
 
+M.symbols_outline = function()
+    highlight("FocusedSymbol", { fg = M.palette.purple, style = "bold" })
+end
+
 M.telescope = function()
     highlight("TelescopeNormal", { bg = M.palette.bgdark })
     highlight("TelescopeBorder", { fg = M.palette.purple, bg = M.palette.bgdark })

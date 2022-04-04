@@ -144,6 +144,20 @@ local default_settings = {
                 },
             },
         },
+        {
+            filetypes = { "Outline" },
+            sections = {
+                lualine_c = {
+                    {
+                        function()
+                            return "Symbols Outline"
+                        end,
+                        icon = "ﴰ",
+                        color = { fg = palette.pink, gui = "bold,italic" },
+                    },
+                },
+            },
+        },
     },
 }
 
