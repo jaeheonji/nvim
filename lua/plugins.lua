@@ -67,7 +67,6 @@ return {
         cmd = "Neotree",
         config = function()
             require("config.interface.neo-tree").setup()
-            require("core.colors").neo_tree()
         end,
     },
     {
@@ -117,7 +116,6 @@ return {
         disable = not config.use_smart_split,
         config = function()
             require("config.utils.smart-splits").setup()
-            require("core.key-bindings").smart_splits()
         end,
     },
     {
@@ -142,7 +140,6 @@ return {
         cmd = "Telescope",
         config = function()
             require("config.utils.telescope").setup()
-            require("core.colors").telescope()
         end,
     },
     {
@@ -235,7 +232,6 @@ return {
         event = "BufWinEnter",
         config = function()
             require("config.which-key").setup()
-            require("core.colors").which_key()
         end,
     },
 }

@@ -31,6 +31,8 @@ local default = {
 
 function M.setup()
     telescope.setup(default)
+
+    require("core.colors").telescope()
 end
 
 return M

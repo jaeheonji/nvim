@@ -18,6 +18,8 @@ local default = {
 
 function M.setup()
     neo_tree.setup(default)
+
+    require("core.colors").neo_tree()
 end
 
 return M

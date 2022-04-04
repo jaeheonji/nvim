@@ -13,6 +13,8 @@ local default = {
 
 function M.setup()
     smart_splits.setup(default)
+
+    require("core.key-bindings").smart_splits()
 end
 
 return M
