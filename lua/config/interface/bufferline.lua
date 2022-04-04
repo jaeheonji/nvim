@@ -23,7 +23,7 @@ local default_settings = {
         offsets = {
             {
                 filetype = "neo-tree",
-                text = "File Explore",
+                text = " File Explore",
                 highlight = "CustomDirectory",
                 padding = 1,
             },
