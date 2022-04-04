@@ -71,6 +71,12 @@ return {
         end,
     },
     {
+        "akinsho/bufferline.nvim",
+        config = function()
+            require("config.interface.bufferline").setup()
+        end,
+    },
+    {
         "nvim-lualine/lualine.nvim",
         config = function()
             require("config.interface.lualine").setup()

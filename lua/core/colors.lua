@@ -73,6 +73,9 @@ function M.init()
 
     highlight("FloatBorder", { fg = M.palette.purple, bg = M.palette.bgdark })
     highlight("NormalFloat", { bg = M.palette.bgdark })
+
+    -- Custom highlight
+    highlight("CustomDirectory", { fg = M.palette.pink, bg = M.palette.bg, style = "bold,italic" })
 end
 
 function M.neo_tree()
