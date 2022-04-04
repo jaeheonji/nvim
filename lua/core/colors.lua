@@ -1,8 +1,6 @@
 local transparentify = require("core.utils").transparentify
 local highlight = require("core.utils").highlight
 
-local config = require("core.utils").config
-
 local M = {}
 
 M.palette = {
@@ -27,39 +25,6 @@ M.palette = {
     yellow = "#F1FA8C",
 }
 
-M.lualine = {
-    normal = {
-        a = { fg = M.palette.fg, bg = M.palette.purple, gui = "bold" },
-        b = { fg = M.palette.fg, bg = transparentify(M.palette.bgdarker) },
-        c = { fg = M.palette.fg, bg = transparentify(M.palette.bgdarker) },
-    },
-    insert = {
-        a = { fg = M.palette.fg, bg = M.palette.green, gui = "bold" },
-        b = { fg = M.palette.fg, bg = transparentify(M.palette.bgdarker) },
-        c = { fg = M.palette.fg, bg = transparentify(M.palette.bgdarker) },
-    },
-    visual = {
-        a = { fg = M.palette.fg, bg = M.palette.yellow, gui = "bold" },
-        b = { fg = M.palette.fg, bg = transparentify(M.palette.bgdarker) },
-        c = { fg = M.palette.fg, bg = transparentify(M.palette.bgdarker) },
-    },
-    replace = {
-        a = { fg = M.palette.fg, bg = M.palette.orange, gui = "bold" },
-        b = { fg = M.palette.fg, bg = transparentify(M.palette.bgdarker) },
-        c = { fg = M.palette.fg, bg = transparentify(M.palette.bgdarker) },
-    },
-    command = {
-        a = { fg = M.palette.fg, bg = M.palette.pink, gui = "bold" },
-        b = { fg = M.palette.fg, bg = transparentify(M.palette.bgdarker) },
-        c = { fg = M.palette.fg, bg = transparentify(M.palette.bgdarker) },
-    },
-    inactive = {
-        a = { fg = M.palette.fg, bg = M.palette.purple, gui = "bold" },
-        b = { fg = M.palette.fg, bg = transparentify(M.palette.bgdarker) },
-        c = { fg = M.palette.fg, bg = transparentify(M.palette.bgdarker) },
-    },
-}
-
 function M.init()
     highlight("Normal", { bg = transparentify(M.palette.bg) })
 
@@ -75,20 +40,15 @@ function M.init()
     highlight("NormalFloat", { bg = M.palette.bgdark })
 
     -- Custom highlight
-    highlight("CustomDirectory", { fg = M.palette.pink, bg = M.palette.bg, style = "bold,italic" })
+    highlight("CustomDirectory", { fg = M.palette.pink, bg = M.palette.bgdarker, style = "bold,italic" })
 end
 
 function M.neo_tree()
-    highlight("NeoTreeNormal", { bg = transparentify(M.palette.bgdarker) })
-    highlight("NeoTreeNormalNC", { bg = transparentify(M.palette.bgdarker) })
+    highlight("NeoTreeNormal", { bg = M.palette.bgdarker })
+    highlight("NeoTreeNormalNC", { bg = M.palette.bgdarker })
+    highlight("NeoTreeVertSplit", { fg = M.palette.bgdarker, bg = M.palette.bgdarker })
 
     highlight("NeoTreeIndentMarker", { fg = M.palette.purple })
-
-    if config().transparent then
-        highlight("NeoTreeVertSplit", { fg = M.palette.purple, bg = "NONE", style = "NONE" })
-    else
-        highlight("NeoTreeVertSplit", { fg = M.palette.bgdarker, bg = M.palette.bgdarker })
-    end
 end
 
 function M.fidget()

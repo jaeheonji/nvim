@@ -3,7 +3,8 @@ if not present then
     return
 end
 
-local colors = require("core.colors")
+local palette = require("core.colors").palette
+local transparentify = require("core.utils").transparentify
 
 local M = {}
 
@@ -14,12 +15,12 @@ local spacer = {
     padding = 0,
 }
 
-local function location()
+local location = function()
     local cursor = vim.api.nvim_win_get_cursor(0)
     return "Ln " .. cursor[1] .. ", Col " .. cursor[2]
 end
 
-local function treesitter_status()
+local treesitter_status = function()
     local b = vim.api.nvim_get_current_buf()
     if next(vim.treesitter.highlighter.active[b]) then
         return "綠TS"
@@ -27,7 +28,7 @@ local function treesitter_status()
     return ""
 end
 
-local function lsp_client_names()
+local lsp_client_names = function()
     local clients = {}
 
     for _, client in pairs(vim.lsp.buf_get_clients(0)) do
@@ -39,26 +40,59 @@ local function lsp_client_names()
     return table.concat(clients, " ")
 end
 
-local default = {
+local theme = {
+    normal = {
+        a = { fg = palette.bgdarker, bg = palette.purple, gui = "bold" },
+        b = { fg = palette.fg, bg = transparentify(palette.bgdarker) },
+        c = { fg = palette.fg, bg = transparentify(palette.bgdarker) },
+    },
+    insert = {
+        a = { fg = palette.bgdarker, bg = palette.green, gui = "bold" },
+        b = { fg = palette.fg, bg = transparentify(palette.bgdarker) },
+        c = { fg = palette.fg, bg = transparentify(palette.bgdarker) },
+    },
+    visual = {
+        a = { fg = palette.bgdarker, bg = palette.yellow, gui = "bold" },
+        b = { fg = palette.fg, bg = transparentify(palette.bgdarker) },
+        c = { fg = palette.fg, bg = transparentify(palette.bgdarker) },
+    },
+    replace = {
+        a = { fg = palette.bgdarker, bg = palette.orange, gui = "bold" },
+        b = { fg = palette.fg, bg = transparentify(palette.bgdarker) },
+        c = { fg = palette.fg, bg = transparentify(palette.bgdarker) },
+    },
+    command = {
+        a = { fg = palette.bgdarker, bg = palette.pink, gui = "bold" },
+        b = { fg = palette.fg, bg = transparentify(palette.bgdarker) },
+        c = { fg = palette.fg, bg = transparentify(palette.bgdarker) },
+    },
+    inactive = {
+        a = { fg = palette.bgdarker, bg = palette.purple, gui = "bold" },
+        b = { fg = palette.fg, bg = transparentify(palette.bgdarker) },
+        c = { fg = palette.fg, bg = transparentify(palette.bgdarker) },
+    },
+}
+
+local default_settings = {
     options = {
-        theme = colors.lualine,
+        theme = theme,
         component_separators = "",
         section_separators = "",
     },
     sections = {
-        lualine_a = { spacer },
+        lualine_a = { "mode" },
         lualine_b = {},
         lualine_c = {
             spacer,
-            { "branch", icon = "", color = { fg = colors.palette.pink } },
+            { "branch", icon = "", color = { fg = palette.pink } },
             { "filetype" },
             {
                 "diagnostics",
                 diagnostics_color = {
-                    error = { fg = colors.palette.red },
-                    warn = { fg = colors.palette.orange },
-                    info = { fg = colors.palette.cyan },
-                    hint = { fg = colors.palette.yellow },
+                    error = { fg = palette.red },
+                    warn = { fg = palette.orange },
+                    info = { fg = palette.cyan },
+                    hint = { fg = palette.yellow },
                 },
                 symbols = { error = " ", warn = " ", info = " ", hint = " " },
                 update_in_insert = true,
@@ -70,7 +104,7 @@ local default = {
             { location },
             { "encoding" },
             { "fileformat", symbols = { unix = "LF", dos = "CRLF", mac = "CR" } },
-            { treesitter_status, color = { fg = colors.palette.green } },
+            { treesitter_status, color = { fg = palette.green } },
             spacer,
         },
         lualine_y = {},
@@ -81,7 +115,7 @@ local default = {
         lualine_b = {},
         lualine_c = {
             spacer,
-            { "branch", icon = "", color = { fg = colors.palette.pink } },
+            { "branch", icon = "", color = { fg = palette.pink } },
             { "filetype" },
         },
 
@@ -89,7 +123,7 @@ local default = {
             { location },
             { "encoding" },
             { "fileformat", symbols = { unix = "LF", dos = "CRLF", mac = "CR" } },
-            { treesitter_status, color = { fg = colors.palette.green } },
+            { treesitter_status, color = { fg = palette.green } },
             spacer,
         },
         lualine_y = {},
@@ -105,7 +139,7 @@ local default = {
                             return "Neo Tree"
                         end,
                         icon = "פּ",
-                        color = { fg = colors.palette.pink, gui = "bold,italic" },
+                        color = { fg = palette.pink, gui = "bold,italic" },
                     },
                 },
             },
@@ -113,8 +147,8 @@ local default = {
     },
 }
 
-function M.setup()
-    lualine.setup(default)
+M.setup = function()
+    lualine.setup(default_settings)
 end
 
 return M
