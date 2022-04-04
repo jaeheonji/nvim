@@ -79,6 +79,8 @@ function M.neo_tree()
     highlight("NeoTreeNormal", { bg = transparentify(M.palette.bgdarker) })
     highlight("NeoTreeNormalNC", { bg = transparentify(M.palette.bgdarker) })
 
+    highlight("NeoTreeIndentMarker", { fg = M.palette.purple })
+
     if config().transparent then
         highlight("NeoTreeVertSplit", { fg = M.palette.purple, bg = "NONE", style = "NONE" })
     else
