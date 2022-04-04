@@ -16,7 +16,7 @@ local sources = {
     code_actions.gitsigns,
 }
 
-function M.setup()
+M.setup = function()
     -- Lua
     if utils.is_contain_language("lua") then
         sources = vim.list_extend(sources, {

@@ -5,14 +5,14 @@ end
 
 local M = {}
 
-local default = {
+local default_settings = {
     mapping = { "ii" },
     timeout = 200,
     clear_empty_lines = true,
 }
 
-function M.setup()
-    better_escape.setup(default)
+M.setup = function()
+    better_escape.setup(default_settings)
 end
 
 return M

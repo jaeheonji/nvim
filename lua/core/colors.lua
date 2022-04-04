@@ -25,7 +25,7 @@ M.palette = {
     yellow = "#F1FA8C",
 }
 
-function M.init()
+M.init = function()
     highlight("Normal", { bg = transparentify(M.palette.bg) })
 
     highlight("EndOfBuffer", { fg = M.palette.bg })
@@ -43,7 +43,7 @@ function M.init()
     highlight("CustomDirectory", { fg = M.palette.pink, bg = M.palette.bgdarker, style = "bold,italic" })
 end
 
-function M.neo_tree()
+M.neo_tree = function()
     highlight("NeoTreeNormal", { bg = M.palette.bgdarker })
     highlight("NeoTreeNormalNC", { bg = M.palette.bgdarker })
     highlight("NeoTreeVertSplit", { fg = M.palette.bgdarker, bg = M.palette.bgdarker })
@@ -51,21 +51,21 @@ function M.neo_tree()
     highlight("NeoTreeIndentMarker", { fg = M.palette.purple })
 end
 
-function M.fidget()
+M.fidget = function()
     highlight("FidgetTitle", { fg = M.palette.purple, style = "bold" })
     highlight("FidgetTask", { fg = M.palette.fg })
 end
 
-function M.which_key()
+M.which_key = function()
     highlight("WhichKeyFloat", { bg = M.palette.bgdark })
 end
 
-function M.telescope()
+M.telescope = function()
     highlight("TelescopeNormal", { bg = M.palette.bgdark })
     highlight("TelescopeBorder", { fg = M.palette.purple, bg = M.palette.bgdark })
 end
 
-function M.hlslens()
+M.hlslens = function()
     highlight("Search", { fg = "NONE", bg = M.palette.selection })
     highlight("IncSearch", { fg = M.palette.red, bg = "NONE", style = "bold,underline" })
 

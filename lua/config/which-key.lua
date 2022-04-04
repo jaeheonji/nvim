@@ -6,7 +6,7 @@ end
 local M = {}
 
 -- Plugin Configurations
-local default = {
+local default_settings = {
     layout = { align = "center", spacing = 10 },
     window = { winblend = 20 },
     triggers_blacklist = {
@@ -31,7 +31,6 @@ local normal = {
     f = {
         name = "Files",
         f = { "<CMD>Telescope find_files<CR>", "Find Files" },
-        o = { "<CMD>NvimTreeFindFile<CR>", "Open in file explorer" },
         s = { "<CMD>w!<CR>", "Save current buffer" },
         S = { "<CMD>wa!<CR>", "Save all buffers" },
         w = { "<CMD>Telescope live_grep<CR>", "Find words in all files" },
@@ -87,8 +86,8 @@ local visual = {
     },
 }
 
-function M.setup()
-    which_key.setup(default)
+M.setup = function()
+    which_key.setup(default_settings)
 
     which_key.register(normal, { mode = "n", prefix = "<SPACE>", noremap = true, silent = true })
     which_key.register(visual, { mode = "v", prefix = "<SPACE>", noremap = true, silent = true })

@@ -5,12 +5,12 @@ end
 
 local M = {}
 
-local default = {
-    border_style = "rounded",
+local default_settings = {
+    border_style = "single",
 }
 
-function M.setup()
-    cosmic_ui.setup(default)
+M.setup = function()
+    cosmic_ui.setup(default_settings)
 end
 
 return M

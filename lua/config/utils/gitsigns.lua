@@ -5,7 +5,7 @@ end
 
 local M = {}
 
-local default = {
+local default_settings = {
     signs = {
         delete = { hl = "GitSignsDelete", text = "│", numhl = "GitSignsDeleteNr", linehl = "GitSignsDeleteLn" },
         topdelete = { hl = "GitSignsDelete", text = "│", numhl = "GitSignsDeleteNr", linehl = "GitSignsDeleteLn" },
@@ -41,8 +41,8 @@ local default = {
     end,
 }
 
-function M.setup()
-    gitsigns.setup(default)
+M.setup = function()
+    gitsigns.setup(default_settings)
 end
 
 return M

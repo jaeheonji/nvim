@@ -7,7 +7,7 @@ local M = {}
 
 local opt = vim.opt
 
-local default = {
+local default_settings = {
     ensure_installed = {},
 
     -- Install languages synchronously
@@ -18,7 +18,7 @@ local default = {
     matchup = { enable = true },
 }
 
-function M.setup()
+M.setup = function()
     -- Tree-sitter based folding
     opt.foldmethod = "expr"
     opt.foldexpr = "nvim_treesitter#foldexpr()"
@@ -26,9 +26,9 @@ function M.setup()
     opt.foldlevelstart = 1
 
     local languages = require("core.utils").config().languages
-    default.ensure_installed = vim.list_extend(default.ensure_installed, languages)
+    default_settings.ensure_installed = vim.list_extend(default_settings.ensure_installed, languages)
 
-    configs.setup(default)
+    configs.setup(default_settings)
 end
 
 return M

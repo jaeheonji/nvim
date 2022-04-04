@@ -14,7 +14,7 @@ local available_lsp = {
     python = { "pylsp", "pyright" },
 }
 
-function M.setup()
+M.setup = function()
     extends.setup_diagnostic()
 
     local servers = {}

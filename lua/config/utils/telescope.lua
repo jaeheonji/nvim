@@ -7,7 +7,7 @@ local M = {}
 
 local actions = require("telescope.actions")
 
-local default = {
+local default_settings = {
     defaults = {
         winblend = 20,
 
@@ -29,8 +29,8 @@ local default = {
     },
 }
 
-function M.setup()
-    telescope.setup(default)
+M.setup = function()
+    telescope.setup(default_settings)
 
     require("core.colors").telescope()
 end

@@ -5,7 +5,7 @@ local M = {}
 local map = vim.api.nvim_set_keymap
 local default_opts = { noremap = true, silent = true }
 
-function M.init()
+M.init = function()
     if not config.use_smart_split then
         -- Tab & Window Navigations
         map("n", "<C-h>", "<C-w>h", default_opts)
@@ -26,14 +26,14 @@ function M.init()
     end
 end
 
-function M.bufferline()
+M.bufferline = function()
     map("n", "<S-h>", ":BufferLineMovePrev<CR>", default_opts)
     map("n", "<S-j>", ":BufferLineCyclePrev<CR>", default_opts)
     map("n", "<S-k>", ":BufferLineCycleNext<CR>", default_opts)
     map("n", "<S-l>", ":BufferLineMoveNext<CR>", default_opts)
 end
 
-function M.smart_splits()
+M.smart_splits = function()
     map("n", "<C-h>", ":lua require('smart-splits').move_cursor_left()<CR>", default_opts)
     map("n", "<C-j>", ":lua require('smart-splits').move_cursor_down()<CR>", default_opts)
     map("n", "<C-k>", ":lua require('smart-splits').move_cursor_up()<CR>", default_opts)

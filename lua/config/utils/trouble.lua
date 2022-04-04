@@ -5,10 +5,10 @@ end
 
 local M = {}
 
-local default = {}
+local default_settings = {}
 
-function M.setup()
-    trouble.setup(default)
+M.setup = function()
+    trouble.setup(default_settings)
 end
 
 return M

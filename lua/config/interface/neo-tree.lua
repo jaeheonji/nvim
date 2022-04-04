@@ -5,7 +5,7 @@ end
 
 local M = {}
 
-local default = {
+local default_settings = {
     popup_border_style = "single",
     window = {
         mappings = {
@@ -16,8 +16,8 @@ local default = {
     },
 }
 
-function M.setup()
-    neo_tree.setup(default)
+M.setup = function()
+    neo_tree.setup(default_settings)
 
     require("core.colors").neo_tree()
 end

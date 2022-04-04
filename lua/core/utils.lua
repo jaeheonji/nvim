@@ -1,18 +1,18 @@
 local M = {}
 
-function M.impatient()
+M.impatient = function()
     local present, impatient = pcall(require, "impatient")
     if present then
         impatient.enable_profile()
     end
 end
 
-function M.config()
+M.config = function()
     local config = require("core.config").config
     return config
 end
 
-function M.transparentify(color)
+M.transparentify = function(color)
     local transparent = M.config().transparent
     if transparent then
         return "NONE"
@@ -21,7 +21,7 @@ function M.transparentify(color)
     end
 end
 
-function M.is_contain_language(name)
+M.is_contain_language = function(name)
     local languages = M.config().languages
     if vim.tbl_contains(languages, name) then
         return true
@@ -29,7 +29,7 @@ function M.is_contain_language(name)
     return false
 end
 
-function M.highlight(group_name, definition)
+M.highlight = function(group_name, definition)
     local highlight_cmd = "hi " .. group_name
     if definition.fg then
         highlight_cmd = highlight_cmd .. " guifg=" .. definition.fg

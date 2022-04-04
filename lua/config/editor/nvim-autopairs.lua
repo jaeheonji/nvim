@@ -5,7 +5,7 @@ end
 
 local M = {}
 
-function M.setup()
+M.setup = function()
     npairs.setup({ check_ts = true })
 end
 

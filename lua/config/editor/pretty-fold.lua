@@ -5,7 +5,7 @@ end
 
 local M = {}
 
-local default = {
+local default_settings = {
     fill_char = " ",
     sections = {
         left = {
@@ -25,8 +25,8 @@ local default = {
     },
 }
 
-function M.setup()
-    fold.setup(default)
+M.setup = function()
+    fold.setup(default_settings)
 
     require("pretty-fold.preview").setup({ border = "single" })
 end

@@ -1,6 +1,6 @@
 local M = {}
 
-function M.setup()
+M.setup = function()
     -- Load core modules
     local modules = {
         "core.options",

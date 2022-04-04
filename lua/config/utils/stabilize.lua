@@ -5,7 +5,7 @@ end
 
 local M = {}
 
-function M.setup()
+M.setup = function()
     stabilize.setup()
 end
 

@@ -5,12 +5,12 @@ end
 
 local M = {}
 
-local default = {
+local default_settings = {
     window = { width = 0.8, height = 0.8 },
 }
 
-function M.setup()
-    zen_mode.setup(default)
+M.setup = function()
+    zen_mode.setup(default_settings)
 end
 
 return M

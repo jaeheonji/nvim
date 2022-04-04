@@ -5,14 +5,14 @@ end
 
 local M = {}
 
-local default = {
+local default_settings = {
     select = {
         backend = { "telescope", "nui", "builtin" },
     },
 }
 
-function M.setup()
-    dressing.setup(default)
+M.setup = function()
+    dressing.setup(default_settings)
 end
 
 return M

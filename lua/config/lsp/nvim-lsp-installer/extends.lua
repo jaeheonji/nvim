@@ -1,6 +1,6 @@
 local M = {}
 
-function M.setup_diagnostic()
+M.setup_diagnostic = function()
     local signs = { Error = [[📛]], Warn = [[👎]], Hint = [[🤔]], Info = [[🤖]] }
     for type, icon in pairs(signs) do
         local hl = "DiagnosticSign" .. type
@@ -13,7 +13,7 @@ function M.setup_diagnostic()
     })
 end
 
-function M.on_attach(client, bufnr, disable_formatting)
+M.on_attach = function(client, bufnr, disable_formatting)
     if disable_formatting then
         client.resolved_capabilities.document_formatting = false
         client.resolved_capabilities.document_range_formatting = false

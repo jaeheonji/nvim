@@ -5,10 +5,10 @@ end
 
 local M = {}
 
-local default = {}
+local default_settings = {}
 
-function M.setup()
-    todo_comments.setup(default)
+M.setup = function()
+    todo_comments.setup(default_settings)
 end
 
 return M

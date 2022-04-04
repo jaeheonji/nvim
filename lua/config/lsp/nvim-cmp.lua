@@ -8,7 +8,7 @@ local M = {}
 local luasnip = require("luasnip")
 local lspkind = require("lspkind")
 
-local default = {
+local default_settings = {
     formatting = {
         format = lspkind.cmp_format({
             with_text = true,
@@ -46,8 +46,8 @@ local default = {
     sources = cmp.config.sources({ { name = "nvim_lsp" }, { name = "luasnip" } }, { { name = "buffer" } }),
 }
 
-function M.setup()
-    cmp.setup(default)
+M.setup = function()
+    cmp.setup(default_settings)
 
     -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
     cmp.setup.cmdline(":", {

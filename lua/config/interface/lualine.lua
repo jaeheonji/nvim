@@ -3,10 +3,10 @@ if not present then
     return
 end
 
+local M = {}
+
 local palette = require("core.colors").palette
 local transparentify = require("core.utils").transparentify
-
-local M = {}
 
 local spacer = {
     function()

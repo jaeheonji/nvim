@@ -5,7 +5,7 @@ end
 
 local M = {}
 
-function M.setup()
+M.setup = function()
     local config = require("alpha.themes.theta").config
     alpha.setup(config)
 end

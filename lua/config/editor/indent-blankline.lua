@@ -5,7 +5,7 @@ end
 
 local M = {}
 
-local default = {
+local default_settings = {
     space_char_blankline = " ",
     show_end_of_line = true,
     show_current_context = true,
@@ -28,11 +28,11 @@ local default = {
     },
 }
 
-function M.setup()
+M.setup = function()
     -- vim.opt.list = true
     -- vim.opt.listchars:append("space:⋅")
 
-    indent.setup(default)
+    indent.setup(default_settings)
 end
 
 return M

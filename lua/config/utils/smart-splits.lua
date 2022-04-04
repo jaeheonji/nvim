@@ -5,14 +5,14 @@ end
 
 local M = {}
 
-local default = {
+local default_settings = {
     ignored_filetypes = {
         "neo-tree",
     },
 }
 
-function M.setup()
-    smart_splits.setup(default)
+M.setup = function()
+    smart_splits.setup(default_settings)
 
     require("core.key-bindings").smart_splits()
 end
