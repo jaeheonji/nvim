@@ -184,13 +184,13 @@ return {
     {
         "williamboman/nvim-lsp-installer",
         config = function()
-            require("config.nvim-lsp.installer").setup()
+            require("config.lsp.nvim-lsp-installer").setup()
         end,
     },
     {
         "jose-elias-alvarez/null-ls.nvim",
         config = function()
-            require("config.nvim-lsp.null-ls").setup()
+            require("config.lsp.null-ls").setup()
         end,
     },
     {
@@ -206,7 +206,7 @@ return {
             "rafamadriz/friendly-snippets",
         },
         config = function()
-            require("config.nvim-lsp.cmp").setup()
+            require("config.lsp.nvim-cmp").setup()
         end,
     },
 
