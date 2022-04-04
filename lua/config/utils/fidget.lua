@@ -5,12 +5,14 @@ end
 
 local M = {}
 
-local default = {
-    window = { blend = 0 },
+local default_settings = {
+    window = { blend = 20 },
 }
 
-function M.setup()
-    fidget.setup(default)
+M.setup = function()
+    fidget.setup(default_settings)
+
+    require("core.colors").fidget()
 end
 
 return M

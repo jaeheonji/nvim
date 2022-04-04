@@ -52,8 +52,8 @@ M.neo_tree = function()
 end
 
 M.fidget = function()
-    highlight("FidgetTitle", { fg = M.palette.purple, style = "bold" })
-    highlight("FidgetTask", { fg = M.palette.fg })
+    highlight("FidgetTitle", { fg = M.palette.purple, bg = M.palette.bgdark, style = "bold" })
+    highlight("FidgetTask", { fg = M.palette.fg, bg = M.palette.bgdark })
 end
 
 M.which_key = function()
