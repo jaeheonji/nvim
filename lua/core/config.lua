@@ -1,7 +1,5 @@
-local M = {}
-
 -- Default Configurations
-M.config = {
+return {
     -- Transparent the background of the theme
     transparent = true,
 
@@ -12,5 +10,3 @@ M.config = {
     -- This options affects Treesitter and LSP
     languages = { "lua" },
 }
-
-return M

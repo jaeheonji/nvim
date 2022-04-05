@@ -8,7 +8,13 @@ M.impatient = function()
 end
 
 M.config = function()
-    local config = require("core.config").config
+    local config = require("core.config")
+
+    local present, custom_config = pcall(require, "custom")
+    if present then
+        config = vim.tbl_deep_extend("force", config, custom_config)
+    end
+
     return config
 end
 
