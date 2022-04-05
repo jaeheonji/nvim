@@ -225,7 +225,7 @@ return {
         "saecki/crates.nvim",
         opt = not support_language.rust,
         disable = not support_language.rust,
-        event = { "BufRead Cargo.tom" },
+        event = { "BufRead Cargo.toml" },
         config = function()
             require("config.language.crates").setup()
         end,
