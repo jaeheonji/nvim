@@ -11,8 +11,6 @@ local default_settings = {
 
 M.setup = function()
     fidget.setup(default_settings)
-
-    require("core.colors").fidget()
 end
 
 return M

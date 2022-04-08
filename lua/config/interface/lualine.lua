@@ -5,8 +5,8 @@ end
 
 local M = {}
 
-local palette = require("core.colors").palette
-local transparentify = require("core.utils").transparentify
+-- local palette = require("core.colors").palette
+-- local transparentify = require("core.utils").transparentify
 
 local spacer = {
     function()
@@ -40,42 +40,43 @@ local lsp_client_names = function()
     return table.concat(clients, " ")
 end
 
-local theme = {
-    normal = {
-        a = { fg = palette.bgdarker, bg = palette.purple, gui = "bold" },
-        b = { fg = palette.fg, bg = transparentify(palette.bgdarker) },
-        c = { fg = palette.fg, bg = transparentify(palette.bgdarker) },
-    },
-    insert = {
-        a = { fg = palette.bgdarker, bg = palette.green, gui = "bold" },
-        b = { fg = palette.fg, bg = transparentify(palette.bgdarker) },
-        c = { fg = palette.fg, bg = transparentify(palette.bgdarker) },
-    },
-    visual = {
-        a = { fg = palette.bgdarker, bg = palette.yellow, gui = "bold" },
-        b = { fg = palette.fg, bg = transparentify(palette.bgdarker) },
-        c = { fg = palette.fg, bg = transparentify(palette.bgdarker) },
-    },
-    replace = {
-        a = { fg = palette.bgdarker, bg = palette.orange, gui = "bold" },
-        b = { fg = palette.fg, bg = transparentify(palette.bgdarker) },
-        c = { fg = palette.fg, bg = transparentify(palette.bgdarker) },
-    },
-    command = {
-        a = { fg = palette.bgdarker, bg = palette.pink, gui = "bold" },
-        b = { fg = palette.fg, bg = transparentify(palette.bgdarker) },
-        c = { fg = palette.fg, bg = transparentify(palette.bgdarker) },
-    },
-    inactive = {
-        a = { fg = palette.bgdarker, bg = palette.purple, gui = "bold" },
-        b = { fg = palette.fg, bg = transparentify(palette.bgdarker) },
-        c = { fg = palette.fg, bg = transparentify(palette.bgdarker) },
-    },
-}
+-- local theme = {
+--     normal = {
+--         a = { fg = palette.bgdarker, bg = palette.purple, gui = "bold" },
+--         b = { fg = palette.fg, bg = transparentify(palette.bgdarker) },
+--         c = { fg = palette.fg, bg = transparentify(palette.bgdarker) },
+--     },
+--     insert = {
+--         a = { fg = palette.bgdarker, bg = palette.green, gui = "bold" },
+--         b = { fg = palette.fg, bg = transparentify(palette.bgdarker) },
+--         c = { fg = palette.fg, bg = transparentify(palette.bgdarker) },
+--     },
+--     visual = {
+--         a = { fg = palette.bgdarker, bg = palette.yellow, gui = "bold" },
+--         b = { fg = palette.fg, bg = transparentify(palette.bgdarker) },
+--         c = { fg = palette.fg, bg = transparentify(palette.bgdarker) },
+--     },
+--     replace = {
+--         a = { fg = palette.bgdarker, bg = palette.orange, gui = "bold" },
+--         b = { fg = palette.fg, bg = transparentify(palette.bgdarker) },
+--         c = { fg = palette.fg, bg = transparentify(palette.bgdarker) },
+--     },
+--     command = {
+--         a = { fg = palette.bgdarker, bg = palette.pink, gui = "bold" },
+--         b = { fg = palette.fg, bg = transparentify(palette.bgdarker) },
+--         c = { fg = palette.fg, bg = transparentify(palette.bgdarker) },
+--     },
+--     inactive = {
+--         a = { fg = palette.bgdarker, bg = palette.purple, gui = "bold" },
+--         b = { fg = palette.fg, bg = transparentify(palette.bgdarker) },
+--         c = { fg = palette.fg, bg = transparentify(palette.bgdarker) },
+--     },
+-- }
 
 local default_settings = {
     options = {
-        theme = theme,
+        -- theme = theme,
+        theme = "catppuccin",
         component_separators = "",
         section_separators = "",
     },
@@ -84,16 +85,17 @@ local default_settings = {
         lualine_b = {},
         lualine_c = {
             spacer,
-            { "branch", icon = "", color = { fg = palette.pink } },
+            -- { "branch", icon = "", color = { fg = palette.pink } },
+            { "branch", icon = "" },
             { "filetype" },
             {
                 "diagnostics",
-                diagnostics_color = {
-                    error = { fg = palette.red },
-                    warn = { fg = palette.orange },
-                    info = { fg = palette.cyan },
-                    hint = { fg = palette.yellow },
-                },
+                -- diagnostics_color = {
+                --     error = { fg = palette.red },
+                --     warn = { fg = palette.orange },
+                --     info = { fg = palette.cyan },
+                --     hint = { fg = palette.yellow },
+                -- },
                 symbols = { error = " ", warn = " ", info = " ", hint = " " },
                 update_in_insert = true,
             },
@@ -104,7 +106,8 @@ local default_settings = {
             { location },
             { "encoding" },
             { "fileformat", symbols = { unix = "LF", dos = "CRLF", mac = "CR" } },
-            { treesitter_status, color = { fg = palette.green } },
+            -- { treesitter_status, color = { fg = palette.green } },
+            { treesitter_status },
             spacer,
         },
         lualine_y = {},
@@ -115,7 +118,8 @@ local default_settings = {
         lualine_b = {},
         lualine_c = {
             spacer,
-            { "branch", icon = "", color = { fg = palette.pink } },
+            -- { "branch", icon = "", color = { fg = palette.pink } },
+            { "branch", icon = "" },
             { "filetype" },
         },
 
@@ -123,7 +127,8 @@ local default_settings = {
             { location },
             { "encoding" },
             { "fileformat", symbols = { unix = "LF", dos = "CRLF", mac = "CR" } },
-            { treesitter_status, color = { fg = palette.green } },
+            -- { treesitter_status, color = { fg = palette.green } },
+            { treesitter_status },
             spacer,
         },
         lualine_y = {},
@@ -139,7 +144,7 @@ local default_settings = {
                             return "Neo Tree"
                         end,
                         icon = "פּ",
-                        color = { fg = palette.pink, gui = "bold,italic" },
+                        -- color = { fg = palette.pink, gui = "bold,italic" },
                     },
                 },
             },
@@ -153,7 +158,7 @@ local default_settings = {
                             return "Symbols Outline"
                         end,
                         icon = "ﴰ",
-                        color = { fg = palette.pink, gui = "bold,italic" },
+                        -- color = { fg = palette.pink, gui = "bold,italic" },
                     },
                 },
             },

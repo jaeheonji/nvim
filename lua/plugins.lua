@@ -14,13 +14,12 @@ return {
     { "nvim-lua/plenary.nvim" },
     { "kyazdani42/nvim-web-devicons" },
 
-    -- Dracula theme
+    -- Color Scheme
     {
-        "dracula/vim",
-        as = "dracula",
+        "catppuccin/nvim",
+        as = "catppuccin",
         config = function()
-            vim.cmd([[ colorscheme dracula ]])
-            require("core.colors").init()
+            require("config.catppuccin").setup()
         end,
     },
 
@@ -97,13 +96,7 @@ return {
 
     -- Utility
     { "famiu/bufdelete.nvim", cmd = "Bdelete" },
-    {
-        "kevinhwang91/nvim-hlslens",
-        event = "BufRead",
-        config = function()
-            require("core.colors").hlslens()
-        end,
-    },
+    { "kevinhwang91/nvim-hlslens", event = "BufRead" },
     {
         "luukvbaal/stabilize.nvim",
         config = function()
@@ -121,9 +114,6 @@ return {
     {
         "simrat39/symbols-outline.nvim",
         cmd = "SymbolsOutline",
-        config = function()
-            require("core.colors").symbols_outline()
-        end,
         setup = function()
             require("config.utils.symbols-outline").setup()
         end,

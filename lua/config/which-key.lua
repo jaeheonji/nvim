@@ -91,8 +91,6 @@ M.setup = function()
 
     which_key.register(normal, { mode = "n", prefix = "<SPACE>", noremap = true, silent = true })
     which_key.register(visual, { mode = "v", prefix = "<SPACE>", noremap = true, silent = true })
-
-    require("core.colors").which_key()
 end
 
 return M
