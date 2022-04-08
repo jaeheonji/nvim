@@ -45,6 +45,11 @@ local default_settings = {
         -- Indicator
         indicator_selected = { guifg = palette.pink },
 
+        -- Modified
+        modified = { guibg = transparentify(palette.bgdark) },
+        modified_visible = { guibg = transparentify(palette.bgdark) },
+        modified_selected = { guibg = transparentify(palette.bg) },
+
         -- Tab
         tab_close = { guifg = palette.fg, guibg = palette.red },
     },
