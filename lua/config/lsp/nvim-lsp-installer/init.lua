@@ -12,6 +12,7 @@ local available_lsp = {
     lua = { "sumneko_lua" },
     rust = { "rust_analyzer" },
     python = { "pylsp", "pyright" },
+    go = { "gopls" },
 }
 
 M.setup = function()
