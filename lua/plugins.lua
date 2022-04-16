@@ -15,13 +15,7 @@ return {
     { "kyazdani42/nvim-web-devicons" },
 
     -- Color Scheme
-    {
-        "catppuccin/nvim",
-        as = "catppuccin",
-        config = function()
-            require("config.catppuccin").setup()
-        end,
-    },
+    { "catppuccin/nvim", as = "catppuccin" },
 
     -- Editor
     { "andymass/vim-matchup" },

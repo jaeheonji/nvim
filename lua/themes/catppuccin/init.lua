@@ -1,5 +1,5 @@
-local present, catppuccin = pcall(require, "catppuccin")
-if not present then
+local ok, catppuccin = pcall(require, "catppuccin")
+if not ok then
     return
 end
 
@@ -18,10 +18,13 @@ local default_settings = {
     },
 }
 
-M.setup = function()
-    catppuccin.setup(default_settings)
+M.color_palette = function()
+    return require("catppuccin.api.colors").get_colors()
+end
 
-    vim.cmd([[ colorscheme catppuccin ]])
+M.setup = function(transparent)
+    default_settings.transparent_background = transparent
+    catppuccin.setup(default_settings)
 end
 
 return M

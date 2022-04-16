@@ -23,6 +23,9 @@ M.setup = function()
 
     local plugins = require("plugins")
     packer.load(plugins)
+
+    -- Initialize themes
+    require("themes").init()
 end
 
 return M

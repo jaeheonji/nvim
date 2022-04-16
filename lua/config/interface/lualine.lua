@@ -5,9 +5,6 @@ end
 
 local M = {}
 
--- local palette = require("core.colors").palette
--- local transparentify = require("core.utils").transparentify
-
 local spacer = {
     function()
         return " "
@@ -40,43 +37,10 @@ local lsp_client_names = function()
     return table.concat(clients, " ")
 end
 
--- local theme = {
---     normal = {
---         a = { fg = palette.bgdarker, bg = palette.purple, gui = "bold" },
---         b = { fg = palette.fg, bg = transparentify(palette.bgdarker) },
---         c = { fg = palette.fg, bg = transparentify(palette.bgdarker) },
---     },
---     insert = {
---         a = { fg = palette.bgdarker, bg = palette.green, gui = "bold" },
---         b = { fg = palette.fg, bg = transparentify(palette.bgdarker) },
---         c = { fg = palette.fg, bg = transparentify(palette.bgdarker) },
---     },
---     visual = {
---         a = { fg = palette.bgdarker, bg = palette.yellow, gui = "bold" },
---         b = { fg = palette.fg, bg = transparentify(palette.bgdarker) },
---         c = { fg = palette.fg, bg = transparentify(palette.bgdarker) },
---     },
---     replace = {
---         a = { fg = palette.bgdarker, bg = palette.orange, gui = "bold" },
---         b = { fg = palette.fg, bg = transparentify(palette.bgdarker) },
---         c = { fg = palette.fg, bg = transparentify(palette.bgdarker) },
---     },
---     command = {
---         a = { fg = palette.bgdarker, bg = palette.pink, gui = "bold" },
---         b = { fg = palette.fg, bg = transparentify(palette.bgdarker) },
---         c = { fg = palette.fg, bg = transparentify(palette.bgdarker) },
---     },
---     inactive = {
---         a = { fg = palette.bgdarker, bg = palette.purple, gui = "bold" },
---         b = { fg = palette.fg, bg = transparentify(palette.bgdarker) },
---         c = { fg = palette.fg, bg = transparentify(palette.bgdarker) },
---     },
--- }
-
 local default_settings = {
     options = {
         -- theme = theme,
-        theme = "catppuccin",
+        theme = require("themes").get("lualine"),
         component_separators = "",
         section_separators = "",
     },
@@ -90,12 +54,6 @@ local default_settings = {
             { "filetype" },
             {
                 "diagnostics",
-                -- diagnostics_color = {
-                --     error = { fg = palette.red },
-                --     warn = { fg = palette.orange },
-                --     info = { fg = palette.cyan },
-                --     hint = { fg = palette.yellow },
-                -- },
                 symbols = { error = " ", warn = " ", info = " ", hint = " " },
                 update_in_insert = true,
             },

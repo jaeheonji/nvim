@@ -5,9 +5,6 @@ end
 
 local M = {}
 
--- local palette = require("core.colors").palette
--- local transparentify = require("core.utils").transparentify
-
 local default_settings = {
     options = {
         numbers = function(opts)
@@ -29,30 +26,7 @@ local default_settings = {
             },
         },
     },
-    -- highlights = {
-    --     fill = { guibg = transparentify(palette.bgdarker) },
-    --
-    --     -- Buffer
-    --     background = { guibg = transparentify(palette.bgdark) },
-    --     buffer_visible = { guibg = transparentify(palette.bgdark) },
-    --     buffer_selected = { guibg = transparentify(palette.bg) },
-    --
-    --     -- Close Button
-    --     close_button = { guibg = transparentify(palette.bgdark) },
-    --     close_button_visible = { guibg = transparentify(palette.bgdark) },
-    --     close_button_selected = { guibg = transparentify(palette.bg) },
-    --
-    --     -- Indicator
-    --     indicator_selected = { guifg = palette.pink },
-    --
-    --     -- Modified
-    --     modified = { guibg = transparentify(palette.bgdark) },
-    --     modified_visible = { guibg = transparentify(palette.bgdark) },
-    --     modified_selected = { guibg = transparentify(palette.bg) },
-    --
-    --     -- Tab
-    --     tab_close = { guifg = palette.fg, guibg = palette.red },
-    -- },
+    highlights = require("themes").get("bufferline"),
 }
 
 M.setup = function()
