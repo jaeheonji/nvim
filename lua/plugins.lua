@@ -152,13 +152,6 @@ return {
         end,
     },
     {
-        "folke/todo-comments.nvim",
-        cmd = { "TodoLocList", "TodoTelescope", "TodoQuickFix" },
-        config = function()
-            require("config.utils.todo-comments").setup()
-        end,
-    },
-    {
         "max397574/better-escape.nvim",
         event = "BufRead",
         config = function()
