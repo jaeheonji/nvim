@@ -25,8 +25,8 @@ M.on_attach = function(client, bufnr, disable_formatting)
     vim.api.nvim_set_keymap("n", "]d", "<cmd>lua vim.diagnostic.goto_next()<CR>", opts)
 
     -- Setup LSP Signiture plguins
-    local present, lsp_signature = pcall(require, "lsp_signature")
-    if present then
+    local ok, lsp_signature = pcall(require, "lsp_signature")
+    if ok then
         lsp_signature.on_attach({
             bind = true,
             handler_opts = { border = "single" },

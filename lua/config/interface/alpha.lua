@@ -1,5 +1,5 @@
-local present, alpha = pcall(require, "alpha")
-if not present then
+local ok, alpha = pcall(require, "alpha")
+if not ok then
     return
 end
 

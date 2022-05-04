@@ -1,5 +1,5 @@
-local present, dressing = pcall(require, "dressing")
-if not present then
+local ok, dressing = pcall(require, "dressing")
+if not ok then
     return
 end
 

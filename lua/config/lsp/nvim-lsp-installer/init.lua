@@ -1,5 +1,5 @@
-local present, installer = pcall(require, "nvim-lsp-installer")
-if not present then
+local ok, installer = pcall(require, "nvim-lsp-installer")
+if not ok then
     return
 end
 

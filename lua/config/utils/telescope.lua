@@ -1,5 +1,5 @@
-local present, telescope = pcall(require, "telescope")
-if not present then
+local ok, telescope = pcall(require, "telescope")
+if not ok then
     return
 end
 

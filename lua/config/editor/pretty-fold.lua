@@ -1,5 +1,5 @@
-local present, fold = pcall(require, "pretty-fold")
-if not present then
+local ok, fold = pcall(require, "pretty-fold")
+if not ok then
     return
 end
 

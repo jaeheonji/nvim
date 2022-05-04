@@ -1,5 +1,5 @@
-local present, stabilize = pcall(require, "stabilize")
-if not present then
+local ok, stabilize = pcall(require, "stabilize")
+if not ok then
     return
 end
 

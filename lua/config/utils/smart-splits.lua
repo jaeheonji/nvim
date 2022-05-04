@@ -1,5 +1,5 @@
-local present, smart_splits = pcall(require, "smart-splits")
-if not present then
+local ok, smart_splits = pcall(require, "smart-splits")
+if not ok then
     return
 end
 

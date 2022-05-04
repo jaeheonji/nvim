@@ -1,5 +1,5 @@
-local present, cosmic_ui = pcall(require, "cosmic-ui")
-if not present then
+local ok, cosmic_ui = pcall(require, "cosmic-ui")
+if not ok then
     return
 end
 

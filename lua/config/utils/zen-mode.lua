@@ -1,5 +1,5 @@
-local present, zen_mode = pcall(require, "zen-mode")
-if not present then
+local ok, zen_mode = pcall(require, "zen-mode")
+if not ok then
     return
 end
 

@@ -1,5 +1,5 @@
-local present, better_escape = pcall(require, "better_escape")
-if not present then
+local ok, better_escape = pcall(require, "better_escape")
+if not ok then
     return
 end
 

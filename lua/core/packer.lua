@@ -17,8 +17,8 @@ M.init = function()
     end
 
     vim.cmd([[ packadd packer.nvim ]])
-    local present, packer = pcall(require, "packer")
-    if not present then
+    local ok, packer = pcall(require, "packer")
+    if not ok then
         error("Could not load packer!")
     end
 
@@ -35,8 +35,8 @@ M.init = function()
 end
 
 M.load = function(plugins, bootstrap)
-    local present, packer = pcall(require, "packer")
-    if not present then
+    local ok, packer = pcall(require, "packer")
+    if not ok then
         error("Should be installed packer first!")
     end
 
