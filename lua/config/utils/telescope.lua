@@ -9,7 +9,7 @@ local actions = require("telescope.actions")
 
 local default_settings = {
     defaults = {
-        winblend = 30,
+        winblend = 40,
 
         borderchars = { "─", "│", "─", "│", "┌", "┐", "┘", "└" },
 
