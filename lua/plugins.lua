@@ -174,10 +174,10 @@ return {
     },
 
     -- LSP (Language Server Protocol)
-    { "neovim/nvim-lspconfig" },
     { "ray-x/lsp_signature.nvim" },
     {
         "williamboman/nvim-lsp-installer",
+        requires = { "neovim/nvim-lspconfig" },
         config = function()
             require("config.lsp.nvim-lsp-installer").setup()
         end,
@@ -191,6 +191,7 @@ return {
     {
         "hrsh7th/nvim-cmp",
         requires = {
+            "neovim/nvim-lspconfig",
             "hrsh7th/cmp-nvim-lsp",
             "hrsh7th/cmp-buffer",
             "hrsh7th/cmp-path",
