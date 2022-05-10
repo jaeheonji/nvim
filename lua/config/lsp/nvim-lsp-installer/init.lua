@@ -50,6 +50,7 @@ M.setup = function()
             local available, rust_tools = pcall(require, "rust-tools")
             if available then
                 rust_tools.setup({
+                    server = opts,
                     tools = { hover_actions = { auto_focus = true, border = "single" } },
                 })
 
