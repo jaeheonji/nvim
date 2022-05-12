@@ -51,6 +51,7 @@ local normal = {
     v = {
         name = "Views",
         e = { "<CMD>Neotree toggle<CR>", "Explorer" },
+        g = { "<CMD>Neotree source=git_status toggle<CR>", "GitStatus" },
         s = { "<CMD>SymbolsOutline<CR>", "Outline" },
         t = { "<CMD>TroubleToggle<CR>", "Diagnostics" },
         z = { "<CMD>ZenMode<CR>", "ZenMode" },
@@ -71,6 +72,11 @@ local normal = {
         s = { "<CMD>lua vim.lsp.buf.signature_help()<CR>", "Signature" },
 
         r = { "<CMD>Telescope lsp_references theme=dropdown<CR>", "References" },
+    },
+    p = {
+        name = "Plugin",
+        s = { "<CMD>PackerStatus<CR>", "Packer Status" },
+        S = { "<CMD>PackerSync<CR>", "Packer Sync" },
     },
 }
 
