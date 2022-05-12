@@ -172,6 +172,13 @@ return {
             require("config.utils.legendary").setup()
         end,
     },
+    {
+        "mvllow/modes.nvim",
+        event = "BufRead",
+        config = function()
+            require("config.utils.modes").setup()
+        end,
+    },
 
     -- LSP (Language Server Protocol)
     { "ray-x/lsp_signature.nvim" },
