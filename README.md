@@ -73,29 +73,33 @@ return {
 
 ## Plugins
 
-* Common
+<details><summary>Common</summary><p>
     * [packer.nvim](https://github.com/wbthomason/packer.nvim) - A use-package inspired plugin manager for Neovim
     * [impatient.nvim](https://github.com/lewis6991/impatient.nvim) - Improve startup time for Neovim
     * [plenary.nvim](https://github.com/nvim-lua/plenary.nvim) - plenary: full; complete; entire; absolute; unqualified
     * [nvim-web-devicons](https://github.com/kyazdani42/nvim-web-devicons) - lua `fork` of vim-web-devicons for neovim
     * [which-key.nvim](https://github.com/folke/which-key.nvim) - Create key bindings that stick
-* Color Scheme
+</p></details>
+<details><summary>Color Scheme</summary><p>
     * [Dracula](https://github.com/dracula/vim) - Dark theme for Vim
     * [Catppuccin](https://github.com/catppuccin/nvim) - Soothing pastel theme for NeoVim
-* Editing Supports
+</p></details>
+<details><summary>Editing Supports</summary><p>
     * [Indent Blankline](https://github.com/lukas-reineke/indent-blankline.nvim) - Indent guides for Neovim
     * [Pretty Fold](https://github.com/anuvyklack/pretty-fold.nvim) - Foldtext customization and folded region preview in Neovim
     * [nvim-autopairs](https://github.com/windwp/nvim-autopairs) - Autopairs for neovim written by lua
     * [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) - Treesitter configurations and abstraction layer for Neovim
     * [vim-visual-multi](https://github.com/mg979/vim-visual-multi) - Multiple cursors plugin for vim/neovim
-* Interface
+</p></details>
+<details><summary>Interface</summary><p>
     * [α alpha-nvim](https://github.com/goolord/alpha-nvim) - A lua powered greeter like vim-startify / dashboard-nvim
     * [bufferline.nvim](https://github.com/akinsho/bufferline.nvim) - A snazzy bufferline for Neovim
     * [lualine.nvim](https://github.com/nvim-lualine/lualine.nvim) - A blazing fast and easy to configure neovim statusline plugin written in pure lua
     * [Neo-tree.nvim](https://github.com/nvim-neo-tree/neo-tree.nvim) - Neovim plugin to manage the file system and other tree like structures
     * [Cosmic-UI](https://github.com/CosmicNvim/cosmic-ui) - Cosmic-UI is a simple wrapper around specific vim functionality
     * [Dressing.nvim](https://github.com/stevearc/dressing.nvim) - Neovim plugin to improve the default vim.ui interfaces
-* Utility
+</p></details>
+<details><summary>Utility</summary><p>
     * [bufdelete.nvim](https://github.com/famiu/bufdelete.nvim) - Delete Neovim buffers without losing window layout
     * [nvim-hlslens](https://github.com/kevinhwang91/nvim-hlslens) - Hlsearch Lens for Neovim
     * [stabilize.nvim](https://github.com/luukvbaal/stabilize.nvim) - Neovim plugin to stabilize window open/close events
@@ -111,7 +115,8 @@ return {
     * [zen-mode.nvim](https://github.com/folke/zen-mode.nvim) - Distraction-free coding for Neovim
     * [legendary.nvim](https://github.com/mrjones2014/legendary.nvim) - A legend for your keymaps, commands, and autocmds, with which-key.nvim integration
     * [modes.nvim](https://github.com/mvllow/modes.nvim) - Prismatic line decorations for the adventurous vim user
-* LSP
+</p></details>
+<details><summary>LSP</summary><p>
     * [lspconfig](https://github.com/neovim/nvim-lspconfig) - Quickstart configurations for the Nvim LSP client
     * [nvim-lsp-installer](https://github.com/williamboman/nvim-lsp-installer) - Neovim plugin that allows you to seamlessly manage LSP servers with `:LspInstall`
     * [lsp_signature.nvim](https://github.com/ray-x/lsp_signature.nvim) - LSP signature hint as you type
@@ -119,7 +124,9 @@ return {
     * [nvim-cmp](https://github.com/hrsh7th/nvim-cmp) - A completion plugin for neovim coded in Lua
     * [lspkind-nvim](https://github.com/onsails/lspkind.nvim) - vscode-like pictograms for neovim lsp completion items
     * [friendly-snippets](https://github.com/rafamadriz/friendly-snippets) - Set of preconfigured snippets for different languages
-* Languages
+</p></details>
+<details><summary>Languages</summary><p>
     * Rust
         * [rust-tools.nvim](https://github.com/simrat39/rust-tools.nvim) - Tools for better development in rust using neovim's builtin lsp
         * [crates.nvim](https://github.com/Saecki/crates.nvim) - A neovim plugin that helps managing crates.io dependencies
+</p></details>
