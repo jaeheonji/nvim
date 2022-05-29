@@ -99,6 +99,12 @@ return {
     { "famiu/bufdelete.nvim", cmd = "Bdelete" },
     { "kevinhwang91/nvim-hlslens", event = "BufRead" },
     {
+        "declancm/maximize.nvim",
+        config = function()
+            require("config.utils.maximize").setup()
+        end,
+    },
+    {
         "luukvbaal/stabilize.nvim",
         config = function()
             require("config.utils.stabilize").setup()
@@ -162,13 +168,6 @@ return {
         event = "BufRead",
         config = function()
             require("config.utils.better-escape").setup()
-        end,
-    },
-    {
-        "folke/zen-mode.nvim",
-        cmd = "ZenMode",
-        config = function()
-            require("config.utils.zen-mode").setup()
         end,
     },
     {
