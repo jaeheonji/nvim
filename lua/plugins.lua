@@ -15,13 +15,7 @@ return {
     { "kyazdani42/nvim-web-devicons" },
 
     -- Color Scheme
-    {
-        "catppuccin/nvim",
-        as = "catppuccin",
-        -- I don't like the latest version of color.
-        -- Use the old version until it is changed.
-        commit = "f079dda3dc23450d69b4bad11bfbd9af2c77f6f3",
-    },
+    { "catppuccin/nvim", as = "catppuccin" },
     { "dracula/vim", as = "dracula" },
 
     -- Editor
