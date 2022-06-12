@@ -18,7 +18,6 @@ local default_settings = {
 -- NORMAL mode
 local normal = {
     ["?"] = { "<CMD>Telescope help_tags<CR>", "Find Help" },
-    ["="] = { "<CMD>lua require('maximize').toggle()<CR>", "Toggle maximize the current window" },
     q = { "<CMD>q!<CR>", "Quit" },
     Q = { "<CMD>qa!<CR>", "Quit Editor" },
     c = {

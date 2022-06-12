@@ -93,12 +93,6 @@ return {
     { "famiu/bufdelete.nvim", cmd = "Bdelete" },
     { "kevinhwang91/nvim-hlslens", event = "BufRead" },
     {
-        "declancm/maximize.nvim",
-        config = function()
-            require("config.utils.maximize").setup()
-        end,
-    },
-    {
         "luukvbaal/stabilize.nvim",
         config = function()
             require("config.utils.stabilize").setup()
@@ -155,13 +149,6 @@ return {
         cmd = "TroubleToggle",
         config = function()
             require("config.utils.trouble").setup()
-        end,
-    },
-    {
-        "max397574/better-escape.nvim",
-        event = "BufRead",
-        config = function()
-            require("config.utils.better-escape").setup()
         end,
     },
     {
