@@ -3,6 +3,7 @@ local config = utils.config()
 
 local support_language = {
     rust = utils.is_contain_language("rust"),
+    typescript = utils.is_contain_language("typescript"),
 }
 
 return {
@@ -213,6 +214,11 @@ return {
         config = function()
             require("config.language.crates").setup()
         end,
+    },
+    {
+        "jose-elias-alvarez/typescript.nvim",
+        opt = not support_language.typescript,
+        disable = not support_language.typescript,
     },
 
     -- Keyboard Bindings

@@ -51,6 +51,12 @@ M.enhance_server_opts = {
             M.on_attach(client, bufnr, true)
         end
     end,
+    ["tsserver"] = function(opts)
+        opts.handlers = M.handlers
+        opts.on_attach = function(client, bufnr)
+            M.on_attach(client, bufnr, true)
+        end
+    end,
 }
 
 return M

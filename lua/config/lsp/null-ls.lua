@@ -10,6 +10,7 @@ local utils = require("core.utils")
 local code_actions = null_ls.builtins.code_actions
 local formatting = null_ls.builtins.formatting
 local completion = null_ls.builtins.completion
+local diagnostics = null_ls.builtins.diagnostics
 
 local sources = {
     completion.spell,
@@ -22,6 +23,29 @@ M.setup = function()
         sources = vim.list_extend(sources, {
             formatting.stylua.with({
                 extra_args = { "--indent-type", "Spaces" },
+            }),
+        })
+    end
+
+    -- Javascript/Typescript
+    if utils.is_contain_language("typescript") then
+        local dynamic_command = function(params)
+            local command_resolver = require("null-ls.helpers.command_resolver")
+
+            return command_resolver.from_node_modules(params)
+                or command_resolver.from_yarn_pnp(params)
+                or vim.fn.executable(params.command) == 1 and params.command
+        end
+
+        sources = vim.list_extend(sources, {
+            formatting.prettier.with({
+                dynamic_command = dynamic_command,
+            }),
+            diagnostics.eslint.with({
+                dynamic_command = dynamic_command,
+            }),
+            code_actions.eslint.with({
+                dynamic_command = dynamic_command,
             }),
         })
     end

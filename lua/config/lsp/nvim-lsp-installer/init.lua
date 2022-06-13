@@ -13,6 +13,7 @@ local available_lsp = {
     rust = { "rust_analyzer" },
     python = { "pylsp", "pyright" },
     go = { "gopls" },
+    typescript = { "tsserver" },
 }
 
 M.setup = function()
@@ -52,6 +53,15 @@ M.setup = function()
                 rust_tools.setup({
                     server = opts,
                     tools = { hover_actions = { auto_focus = true, border = "single" } },
+                })
+
+                goto skip
+            end
+        elseif server == "tsserver" then
+            local available, typescript = pcall(require, "typescript")
+            if available then
+                typescript.setup({
+                    server = opts,
                 })
 
                 goto skip
