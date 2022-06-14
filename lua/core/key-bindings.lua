@@ -13,6 +13,11 @@ M.init = function()
         map("n", "<C-k>", "<C-w>k", default_opts)
         map("n", "<C-l>", "<C-w>l", default_opts)
 
+        map("n", "<C-Left>", "<C-w>h", default_opts)
+        map("n", "<C-Down>", "<C-w>j", default_opts)
+        map("n", "<C-Up>", "<C-w>k", default_opts)
+        map("n", "<C-Right>", "<C-w>l", default_opts)
+
         -- Window Resize
         map("n", "<A-l>", ":vert res +10<CR>", default_opts)
         map("n", "<A-h>", ":vert res -10<CR>", default_opts)
@@ -34,6 +39,11 @@ M.smart_splits = function()
     map("n", "<C-j>", ":lua require('smart-splits').move_cursor_down()<CR>", default_opts)
     map("n", "<C-k>", ":lua require('smart-splits').move_cursor_up()<CR>", default_opts)
     map("n", "<C-l>", ":lua require('smart-splits').move_cursor_right()<CR>", default_opts)
+
+    map("n", "<C-Left>", ":lua require('smart-splits').move_cursor_left()<CR>", default_opts)
+    map("n", "<C-Down>", ":lua require('smart-splits').move_cursor_down()<CR>", default_opts)
+    map("n", "<C-Up>", ":lua require('smart-splits').move_cursor_up()<CR>", default_opts)
+    map("n", "<C-Right>", ":lua require('smart-splits').move_cursor_right()<CR>", default_opts)
 
     -- Window Resize
     map("n", "<A-h>", ":lua require('smart-splits').resize_left()<CR>", default_opts)
