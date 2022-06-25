@@ -18,12 +18,15 @@ M.config = function()
     return config
 end
 
-M.is_contain_language = function(name)
-    local languages = M.config().languages
-    if vim.tbl_contains(languages, name) then
-        return true
+M.get_language_server = function(name)
+    local language = M.config().language
+    local server = vim.tbl_get(language.server, name)
+
+    if server == nil then
+        return false, nil
     end
-    return false
+
+    return true, server
 end
 
 return M

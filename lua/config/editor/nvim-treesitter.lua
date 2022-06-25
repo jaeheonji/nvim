@@ -3,9 +3,9 @@ if not ok then
     return
 end
 
-local M = {}
-
 local opt = vim.opt
+
+local M = {}
 
 local default_settings = {
     ensure_installed = {},
@@ -25,8 +25,8 @@ M.setup = function()
     opt.foldcolumn = "auto"
     opt.foldlevelstart = 1
 
-    local languages = require("core.utils").config().languages
-    default_settings.ensure_installed = vim.list_extend(default_settings.ensure_installed, languages)
+    local tree_sitter = require("core.utils").config().language.tree_sitter
+    default_settings.ensure_installed = vim.list_extend(default_settings.ensure_installed, tree_sitter)
 
     configs.setup(default_settings)
 end

@@ -19,7 +19,7 @@ local sources = {
 
 M.setup = function()
     -- Lua
-    if utils.is_contain_language("lua") then
+    if utils.get_language_server("lua") then
         sources = vim.list_extend(sources, {
             formatting.stylua.with({
                 extra_args = { "--indent-type", "Spaces" },
@@ -28,7 +28,8 @@ M.setup = function()
     end
 
     -- Javascript/Typescript
-    if utils.is_contain_language("typescript") then
+    local typescript, servers = utils.get_language_server("typescript")
+    if typescript and vim.tbl_contains(servers, "tsserver") then
         local dynamic_command = function(params)
             local command_resolver = require("null-ls.helpers.command_resolver")
 

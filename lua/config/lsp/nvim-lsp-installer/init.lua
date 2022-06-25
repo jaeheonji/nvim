@@ -8,25 +8,14 @@ local M = {}
 local extends = require("config.lsp.nvim-lsp-installer.extends")
 local capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
-local available_lsp = {
-    lua = { "sumneko_lua" },
-    rust = { "rust_analyzer" },
-    python = { "pylsp", "pyright" },
-    go = { "gopls" },
-    typescript = { "tsserver" },
-}
-
 M.setup = function()
     extends.setup_diagnostic()
 
     local servers = {}
 
-    local languages = require("core.utils").config().languages
-    for _, language in pairs(languages) do
-        local lsp = vim.tbl_get(available_lsp, language)
-        if lsp then
-            servers = vim.list_extend(servers, lsp)
-        end
+    local language = require("core.utils").config().language
+    for _, items in pairs(language.server) do
+        servers = vim.list_extend(servers, items)
     end
 
     nvim_lsp_installer.setup({

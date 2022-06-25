@@ -2,8 +2,8 @@ local utils = require("core.utils")
 local config = utils.config()
 
 local support_language = {
-    rust = utils.is_contain_language("rust"),
-    typescript = utils.is_contain_language("typescript"),
+    rust = utils.get_language_server("rust"),
+    typescript = utils.get_language_server("typescript"),
 }
 
 return {

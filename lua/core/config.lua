@@ -13,6 +13,10 @@ return {
     use_smart_split = true,
 
     -- Language Support
-    -- This options affects Treesitter and LSP
-    languages = { "lua" },
+    language = {
+        tree_sitter = { "lua" },
+        server = {
+            lua = { "sumneko_lua" },
+        },
+    },
 }
