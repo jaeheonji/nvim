@@ -47,6 +47,7 @@ local normal = {
         s = { "<CMD>split<CR>", "Split window horizontal" },
         v = { "<CMD>vsplit<CR>", "Split window vertical" },
         d = { "<CMD>close<CR>", "Close current window" },
+        m = { "<CMD>WinShift<CR>", "Start Win-Move mode" },
     },
     v = {
         name = "Views",

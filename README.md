@@ -126,6 +126,7 @@ return {
 * [trouble.nvim](https://github.com/folke/trouble.nvim) - A pretty diagnostics, references, telescope results, quickfix and location list to help you solve all the trouble your code is causing
 * [legendary.nvim](https://github.com/mrjones2014/legendary.nvim) - A legend for your keymaps, commands, and autocmds, with which-key.nvim integration
 * [modes.nvim](https://github.com/mvllow/modes.nvim) - Prismatic line decorations for the adventurous vim user
+* [winshift.nvim](https://github.com/sindrets/winshift.nvim) - Rearrange your windows with ease
 
 </details>
 <details><summary>LSP</summary>

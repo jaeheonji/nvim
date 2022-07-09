@@ -108,6 +108,13 @@ return {
         end,
     },
     {
+        "sindrets/winshift.nvim",
+        event = "BufWinEnter",
+        config = function()
+            require("config.utils.winshift").setup()
+        end,
+    },
+    {
         "s1n7ax/nvim-window-picker",
         config = function()
             require("config.utils.window-picker").setup()
