@@ -13,6 +13,7 @@ local default_settings = {
             colored_indent_levels = true,
         },
         bufferline = false,
+        telescope = false,
         native_lsp = {
             virtual_text = {
                 errors = "NONE",

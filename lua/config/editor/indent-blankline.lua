@@ -26,11 +26,19 @@ local default_settings = {
         "terminal",
         "nofile",
     },
+    char_highlight_list = {
+        "IndentBlanklineIndent1",
+        "IndentBlanklineIndent2",
+        "IndentBlanklineIndent3",
+        "IndentBlanklineIndent4",
+        "IndentBlanklineIndent5",
+        "IndentBlanklineIndent6",
+    },
 }
 
 M.setup = function()
-    -- vim.opt.list = true
-    -- vim.opt.listchars:append("space:⋅")
+    vim.opt.list = true
+    vim.opt.listchars:append("space:⋅")
 
     indent.setup(default_settings)
 end

@@ -5,8 +5,8 @@ return {
     -- Basic
     WinSeparator = { fg = cp.blue, bg = tp(cp.crust) },
 
-    StatusLine = { bg = tp(cp.mantle) },
-    StatusLineNC = { bg = tp(cp.mantle) },
+    StatusLine = { fg = cp.text, bg = tp(cp.mantle) },
+    StatusLineNC = { fg = cp.surface1, bg = tp(cp.mantle) },
 
     -- NeoTree
     NeoTreeNormal = { bg = tp(cp.mantle) },
