@@ -1,4 +1,4 @@
-local cp = require("catppuccin.api.colors").get_colors()
+local cp = require("catppuccin.palettes").get_palette()
 local tp = require("themes.utils").tp
 
 return {
