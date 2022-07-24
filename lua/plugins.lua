@@ -30,7 +30,10 @@ return {
     },
     {
         "anuvyklack/pretty-fold.nvim",
-        requires = { "anuvyklack/nvim-keymap-amend" },
+        requires = {
+            "anuvyklack/fold-preview.nvim",
+            "anuvyklack/nvim-keymap-amend",
+        },
         config = function()
             require("config.editor.pretty-fold").setup()
         end,

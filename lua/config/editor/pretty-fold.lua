@@ -6,21 +6,24 @@ end
 local M = {}
 
 local default_settings = {
-    fill_char = " ",
+    keep_indentation = false,
+    fill_char = "━",
     sections = {
         left = {
-            " ⚡ ",
+            "━ ",
+            function()
+                return string.rep("*", vim.v.foldlevel)
+            end,
+            " ━┫",
             "content",
+            "┣",
         },
         right = {
-            " ",
+            "┫ ",
             "number_of_folded_lines",
             ": ",
             "percentage",
-            " ",
-            function(config)
-                return config.fill_char:rep(3)
-            end,
+            " ┣━━",
         },
     },
 }
@@ -28,7 +31,7 @@ local default_settings = {
 M.setup = function()
     fold.setup(default_settings)
 
-    require("pretty-fold.preview").setup({ border = "single" })
+    require("fold-preview").setup({ border = "single" })
 end
 
 return M
