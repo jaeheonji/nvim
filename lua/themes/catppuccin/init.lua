@@ -24,6 +24,7 @@ M.setup = function()
 
     catppuccin.setup(default_settings)
 
+    vim.g.catppuccin_flavour = "mocha"
     vim.cmd("colorscheme catppuccin")
 
     local highlights = require("themes.catppuccin.highlights")
