@@ -1,22 +1,19 @@
 -- Default Configurations
 return {
-    themes = {
-        -- The name of theme
-        -- Currently, supports two themes ('dracula', 'catppuccin')
-        name = "catppuccin",
+    -- Set colorscheme
+    colorscheme = "catppuccin",
 
-        -- Transparent the background of the theme
-        transparent = true,
-    },
+    -- Set vim options
+    -- https://neovim.io/doc/user/options.html
+    options = {
+        -- Whether to use default options
+        -- you can find out default in `lua/core/options.lua`
+        enable_default = true,
 
-    -- Use the smart-split plugin instead of the default key-binding
-    use_smart_split = true,
-
-    -- Language Support
-    language = {
-        tree_sitter = { "lua" },
-        server = {
-            lua = { "sumneko_lua" },
-        },
+        -- Set custom options
+        setup = function()
+            -- example:
+            -- vim.opt.number = true
+        end
     },
 }

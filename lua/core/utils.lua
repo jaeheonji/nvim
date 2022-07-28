@@ -18,15 +18,4 @@ M.config = function()
     return config
 end
 
-M.get_language_server = function(name)
-    local language = M.config().language
-    local server = vim.tbl_get(language.server, name)
-
-    if server == nil then
-        return false, nil
-    end
-
-    return true, server
-end
-
 return M

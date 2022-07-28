@@ -1,6 +1,6 @@
 local M = {}
 
-M.init = function()
+M.setup = function()
     local fn = vim.fn
     local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
 
