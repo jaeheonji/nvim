@@ -53,6 +53,7 @@ return {
 
     {
         "windwp/nvim-autopairs",
+        event = "BufWinEnter",
         config = function()
             require("config.nvim-autopairs")
         end,
@@ -60,6 +61,7 @@ return {
 
     {
         "lukas-reineke/indent-blankline.nvim",
+        event = "BufWinEnter",
         config = function()
             require("config.indent-blankline")
         end,
@@ -67,6 +69,7 @@ return {
 
     {
         "anuvyklack/pretty-fold.nvim",
+        event = "BufWinEnter",
         config = function()
             require("config.pretty-fold")
         end,
@@ -113,4 +116,31 @@ return {
             require("config.null-ls")
         end,
     },
+
+    {
+        "nvim-telescope/telescope.nvim",
+        tag = "0.1.0",
+        requires = {
+            "nvim-lua/plenary.nvim",
+        },
+        cmd = "Telescope",
+        config = function()
+            require("config.telescope")
+        end,
+    },
+
+    {
+        "numToStr/Comment.nvim",
+        keys = { "gc", "gb", "g<", "g>" },
+        config = function()
+            require("config.comment")
+        end
+    },
+
+    {
+        "mrjones2014/smart-splits.nvim",
+        config = function()
+            require("config.smart-splits")
+        end
+    }
 }
