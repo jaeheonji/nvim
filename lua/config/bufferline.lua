@@ -5,10 +5,12 @@ end
 
 local settings = require("core.utils").override("bufferline", {
     options = {
+        buffer_close_icon = "\u{f00d}",
         offsets = {
             {
                 filetype = "neo-tree",
-                padding = 1
+                text = "🐱 File Explorer",
+                highlight = "BufferLineSideBarOffset",
             },
         },
     },

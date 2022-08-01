@@ -37,7 +37,7 @@ return {
 
     {
         "feline-nvim/feline.nvim",
-        branch = "0.5-compat",
+        -- branch = "0.5-compat",
         config = function()
             require("config.feline")
         end,
@@ -134,13 +134,13 @@ return {
         keys = { "gc", "gb", "g<", "g>" },
         config = function()
             require("config.comment")
-        end
+        end,
     },
 
     {
         "mrjones2014/smart-splits.nvim",
         config = function()
             require("config.smart-splits")
-        end
-    }
+        end,
+    },
 }
