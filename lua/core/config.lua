@@ -14,7 +14,7 @@ return {
         setup = function()
             -- example:
             -- vim.g.catppuccin_flavour = "macchiato"
-        end
+        end,
     },
 
     -- Set vim key-bindings
@@ -26,7 +26,7 @@ return {
         setup = function()
             -- example:
             -- vim.api.nvim_set_keymap(...)
-        end
+        end,
     },
 
     -- Set plugin configurations
@@ -37,8 +37,28 @@ return {
             -- { "dracula/vim", as = "dracula" }
         },
         override = {
-            -- example:
-            -- ["catppuccin"] = { ... }
+            ["lspconfig"] = {
+                servers = {
+                    sumneko_lua = {
+                        on_attach = function(client)
+                            client.resolved_capabilities.document_formatting = false
+                        end,
+                        settings = {
+                            Lua = {
+                                diagnostics = { globals = { "vim" } },
+                                telemetry = { enable = false },
+                            },
+                        },
+                    },
+                },
+            },
+
+            ["null-ls"] = {
+                sources = {
+                    require("null-ls").builtins.code_actions.gitsigns,
+                    require("null-ls").builtins.formatting.stylua,
+                },
+            },
         },
-    }
+    },
 }
