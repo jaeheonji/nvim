@@ -4,7 +4,10 @@ if not ok then
 end
 
 local settings = require("core.utils").override("null-ls", {
-    sources = {},
+    sources = {
+        require("null-ls").builtins.code_actions.gitsigns,
+        require("null-ls").builtins.formatting.stylua,
+    },
     on_attach = function(client, bufnr)
         local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 

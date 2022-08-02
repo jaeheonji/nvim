@@ -36,6 +36,7 @@ return {
             -- "nvim-lua/plenary.nvim"
         },
         override = {
+            -- example:
             ["lspconfig"] = {
                 servers = {
                     sumneko_lua = {
@@ -49,13 +50,6 @@ return {
                             },
                         },
                     },
-                },
-            },
-
-            ["null-ls"] = {
-                sources = {
-                    require("null-ls").builtins.code_actions.gitsigns,
-                    require("null-ls").builtins.formatting.stylua,
                 },
             },
         },
