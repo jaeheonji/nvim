@@ -5,6 +5,9 @@ end
 
 local settings = require("core.utils").override("which-key", {
     layout = { align = "center", spacing = 10 },
+    window = {
+        border = "single",
+    },
 })
 
 wkey.setup(settings)

@@ -22,6 +22,7 @@ local settings = require("core.utils").override("telescope", {
         prompt_prefix = "   ",
         selection_caret = "  ",
         entry_prefix = "  ",
+        borderchars = { "─", "│", "─", "│", "┌", "┐", "┘", "└" },
         layout_config = {
             prompt_position = "top",
             height = 0.8,
@@ -41,6 +42,19 @@ local settings = require("core.utils").override("telescope", {
             find_command = { "fd", "--type", "f", "--strip-cwd-prefix" },
         },
     },
+    extensions = {
+        ["ui-select"] = {
+            require("telescope.themes").get_cursor({
+                borderchars = {
+                    { "─", "│", "─", "│", "┌", "┐", "┘", "└" },
+                    prompt = { "─", "│", " ", "│", "┌", "┐", "│", "│" },
+                    results = { "─", "│", "─", "│", "├", "┤", "┘", "└" },
+                    preview = { "─", "│", "─", "│", "┌", "┐", "┘", "└" },
+                },
+            }),
+        },
+    },
 })
 
 telescope.setup(settings)
+telescope.load_extension("ui-select")

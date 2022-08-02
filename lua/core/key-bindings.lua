@@ -83,6 +83,11 @@ wkey.register({
         d = { "<CMD>lua vim.lsp.buf.definition()<CR>", "Jump to definition" },
         i = { "<CMD>lua vim.lsp.buf.implementation()<CR>", "Find implementations" },
 
-        R = { "<CMD><CR>", "References tree" },
+        R = {
+            function()
+                require("telescope.builtin").lsp_references(require("telescope.themes").get_ivy())
+            end,
+            "References tree",
+        },
     },
 }, { mode = "n", prefix = "<SPACE>", noremap = true, silent = true })

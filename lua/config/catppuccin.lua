@@ -16,7 +16,7 @@ local settings = require("core.utils").override("catppuccin", {
         which_key = true,
     },
     custom_highlights = {
-        VertSplit = { fg = cp.lavender },
+        VertSplit = { fg = cp.surface1 },
         Folded = { fg = cp.overlay0, bg = cp.surface0 },
         NormalFloat = { bg = cp.base },
 
@@ -37,21 +37,21 @@ local settings = require("core.utils").override("catppuccin", {
         BufferLineSideBarOffset = { fg = cp.red, bg = cp.mantle, style = { "bold", "italic" } },
 
         -- Telescope
-        TelescopePromptNormal = { bg = cp.surface0 },
-        TelescopePromptBorder = { fg = cp.surface0, bg = cp.surface0 },
+        TelescopePromptNormal = { bg = cp.base },
+        TelescopePromptBorder = { fg = cp.blue, bg = cp.base },
         TelescopePromptTitle = { fg = cp.crust, bg = cp.red, style = { "bold" } },
         TelescopePromptPrefix = { fg = cp.red },
 
-        TelescopePreviewNormal = { bg = cp.mantle },
-        TelescopePreviewBorder = { fg = cp.mantle, bg = cp.mantle },
+        TelescopePreviewNormal = { bg = cp.base },
+        TelescopePreviewBorder = { fg = cp.blue, bg = cp.base },
         TelescopePreviewTitle = { fg = cp.crust, bg = cp.green, style = { "bold" } },
 
-        TelescopeResultsNormal = { bg = cp.mantle },
-        TelescopeResultsBorder = { fg = cp.mantle, bg = cp.mantle },
+        TelescopeResultsNormal = { bg = cp.base },
+        TelescopeResultsBorder = { fg = cp.blue, bg = cp.base },
         TelescopeResultsTitle = { fg = cp.crust, bg = cp.blue, style = { "bold" } },
 
         -- WhichKey
-        WhichKeyFloat = { bg = cp.mantle },
+        WhichKeyFloat = { bg = cp.base },
     },
 })
 
