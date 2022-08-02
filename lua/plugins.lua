@@ -4,6 +4,9 @@ return {
 
     { "lewis6991/impatient.nvim" },
 
+    { "nvim-lua/plenary.nvim" },
+    { "kyazdani42/nvim-web-devicons" },
+
     {
         "catppuccin/nvim",
         as = "catppuccin",
@@ -16,8 +19,6 @@ return {
         "nvim-neo-tree/neo-tree.nvim",
         branch = "v2.x",
         requires = {
-            "nvim-lua/plenary.nvim",
-            "kyazdani42/nvim-web-devicons",
             "MunifTanjim/nui.nvim",
         },
         cmd = "Neotree",
@@ -29,7 +30,6 @@ return {
     {
         "akinsho/bufferline.nvim",
         tag = "v2.*",
-        requires = "kyazdani42/nvim-web-devicons",
         config = function()
             require("config.bufferline")
         end,
@@ -121,7 +121,6 @@ return {
         "nvim-telescope/telescope.nvim",
         tag = "0.1.0",
         requires = {
-            "nvim-lua/plenary.nvim",
             "nvim-telescope/telescope-ui-select.nvim",
         },
         cmd = "Telescope",
@@ -152,4 +151,6 @@ return {
             require("config.which-key")
         end,
     },
+
+    { "famiu/bufdelete.nvim", cmd = "Bdelete" },
 }

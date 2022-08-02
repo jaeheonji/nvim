@@ -34,7 +34,6 @@ return {
         custom = {
             -- example:
             -- "nvim-lua/plenary.nvim"
-            { "famiu/bufdelete.nvim", cmd = "Bdelete" },
         },
         override = {
             ["lspconfig"] = {
