@@ -52,6 +52,7 @@ wkey.register({
     },
     b = {
         name = "buffer",
+        e = { "<CMD>ene<CR>", "New empty buffer" },
         k = { "<CMD>Bdelete<CR>", "Kill buffer" },
         K = { "", "Kill all buffer" },
     },

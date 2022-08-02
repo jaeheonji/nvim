@@ -152,5 +152,12 @@ return {
         end,
     },
 
+    {
+        "goolord/alpha-nvim",
+        config = function()
+            require("config.alpha")
+        end,
+    },
+
     { "famiu/bufdelete.nvim", cmd = "Bdelete" },
 }
