@@ -13,10 +13,12 @@ local settings = require("core.utils").override("catppuccin", {
             enabled = true,
             colored_indent_levels = true,
         },
+        which_key = true,
     },
     custom_highlights = {
         VertSplit = { fg = cp.lavender },
         Folded = { fg = cp.overlay0, bg = cp.surface0 },
+        NormalFloat = { bg = cp.base },
 
         -- NeoTree
         NeoTreeNormal = { fg = cp.text, bg = cp.mantle },
@@ -47,6 +49,9 @@ local settings = require("core.utils").override("catppuccin", {
         TelescopeResultsNormal = { bg = cp.mantle },
         TelescopeResultsBorder = { fg = cp.mantle, bg = cp.mantle },
         TelescopeResultsTitle = { fg = cp.crust, bg = cp.blue, style = { "bold" } },
+
+        -- WhichKey
+        WhichKeyFloat = { bg = cp.mantle },
     },
 })
 

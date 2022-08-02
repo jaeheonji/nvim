@@ -9,9 +9,15 @@ local settings = require("core.utils").override("neo-tree", {
     default_component_configs = {
         indent = {
             padding = 2,
-            with_expanders = true
-        }
-    }
+            with_expanders = true,
+        },
+    },
+
+    window = {
+        mappings = {
+            ["<SPACE>"] = "",
+        },
+    },
 })
 
 neo_tree.setup(settings)

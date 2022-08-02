@@ -17,7 +17,7 @@ local settings = require("core.utils").override("telescope", {
             "--line-number",
             "--column",
             "--smart-case",
-            "--trim"
+            "--trim",
         },
         prompt_prefix = "   ",
         selection_caret = "  ",
@@ -30,7 +30,7 @@ local settings = require("core.utils").override("telescope", {
             horizontal = {
                 preview_width = 0.55,
                 results_width = 0.8,
-            }
+            },
         },
         mappings = {
             i = { ["<ESC>"] = actions.close },
@@ -38,9 +38,9 @@ local settings = require("core.utils").override("telescope", {
     },
     pickers = {
         find_files = {
-            find_command = { "fd", "--type", "f", "--strip-cwd-prefix" }
+            find_command = { "fd", "--type", "f", "--strip-cwd-prefix" },
         },
-    }
+    },
 })
 
 telescope.setup(settings)

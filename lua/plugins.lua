@@ -143,4 +143,12 @@ return {
             require("config.smart-splits")
         end,
     },
+
+    {
+        "folke/which-key.nvim",
+        -- cmd = "WhichKey",
+        config = function()
+            require("config.which-key")
+        end,
+    },
 }
