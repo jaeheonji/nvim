@@ -1,25 +1,32 @@
+local config = require("core.utils").config()
+
 local M = {}
 
 M.setup = function()
-    -- Load core modules
-    local modules = {
-        { name = "core.options", init = false },
-        { name = "core.key-bindings", init = true },
-        { name = "core.packer", init = true },
-        { name = "themes", init = true },
-    }
+    -- Options
+    local options = config.options
 
-    for _, module in ipairs(modules) do
-        local ok, callback = pcall(require, module.name)
-        if not ok then
-            error("Could not be loaded '" .. module.name .. "'\n" .. callback)
-        end
-
-        -- Initialize the core modules
-        if module.init then
-            callback.init()
-        end
+    if options.enable_default then
+        require("core.options")
     end
+
+    options.setup()
+
+    -- Key-bindings
+    local key_bindings = config.key_bindings
+
+    if key_bindings.enable_default then
+        require("core.key-bindings")
+    end
+
+    key_bindings.setup()
+
+    -- Plugins
+    local plugins = vim.list_extend(require("plugins"), config.plugins.custom)
+    require("core.packer").setup(plugins)
+
+    -- Others
+    require("core.utils").diagnostic()
 end
 
 return M

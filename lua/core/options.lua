@@ -1,7 +1,9 @@
+local g = vim.g
 local opt = vim.opt
 
 opt.mouse = "a"
 opt.termguicolors = true
+opt.laststatus = 3
 
 opt.clipboard = "unnamedplus"
 opt.swapfile = false
@@ -27,3 +29,16 @@ opt.splitright = true
 
 opt.ignorecase = true
 opt.smartcase = true
+
+-- Catppuccin
+g.catppuccin_flavour = "mocha"
+
+-- Tree-sitter based folding
+opt.foldmethod = "expr"
+opt.foldexpr = "nvim_treesitter#foldexpr()"
+opt.foldcolumn = "auto"
+opt.foldlevelstart = 1
+
+-- Indent blankline
+opt.list = true
+opt.listchars:append "space:⋅"

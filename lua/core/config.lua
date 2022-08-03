@@ -1,22 +1,57 @@
 -- Default Configurations
 return {
-    themes = {
-        -- The name of theme
-        -- Currently, supports two themes ('dracula', 'catppuccin')
-        name = "catppuccin",
+    -- Set colorscheme
+    colorscheme = "catppuccin",
 
-        -- Transparent the background of the theme
-        transparent = true,
+    -- Set vim options
+    -- https://neovim.io/doc/user/options.html
+    options = {
+        -- Whether to use default options
+        -- you can find out default in `lua/core/options.lua`
+        enable_default = true,
+
+        -- User custom options
+        setup = function()
+            -- example:
+            -- vim.g.catppuccin_flavour = "macchiato"
+        end,
     },
 
-    -- Use the smart-split plugin instead of the default key-binding
-    use_smart_split = true,
+    -- Set vim key-bindings
+    key_bindings = {
+        -- you can find out default in `lua/core/key-bindings.lua`
+        enable_default = true,
 
-    -- Language Support
-    language = {
-        tree_sitter = { "lua" },
-        server = {
-            lua = { "sumneko_lua" },
+        -- User custom key-bindings
+        setup = function()
+            -- example:
+            -- vim.api.nvim_set_keymap(...)
+        end,
+    },
+
+    -- Set plugin configurations
+    plugins = {
+        custom = {
+            -- example:
+            -- "nvim-lua/plenary.nvim"
+        },
+        override = {
+            -- example:
+            ["lspconfig"] = {
+                servers = {
+                    sumneko_lua = {
+                        on_attach = function(client)
+                            client.resolved_capabilities.document_formatting = false
+                        end,
+                        settings = {
+                            Lua = {
+                                diagnostics = { globals = { "vim" } },
+                                telemetry = { enable = false },
+                            },
+                        },
+                    },
+                },
+            },
         },
     },
 }

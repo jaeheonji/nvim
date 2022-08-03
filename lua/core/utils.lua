@@ -18,15 +18,21 @@ M.config = function()
     return config
 end
 
-M.get_language_server = function(name)
-    local language = M.config().language
-    local server = vim.tbl_get(language.server, name)
-
-    if server == nil then
-        return false, nil
+M.override = function(plugin, default_settings)
+    local settings = M.config().plugins.override[plugin]
+    if settings == nil then
+        return default_settings
     end
 
-    return true, server
+    return vim.tbl_deep_extend("force", default_settings, settings)
+end
+
+M.diagnostic = function()
+    local signs = { Error = "\u{f146}", Warn = "\u{f14a}", Hint = "\u{f0fd}", Info = "\u{f14d}" }
+    for type, icon in pairs(signs) do
+        local hl = "DiagnosticSign" .. type
+        vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+    end
 end
 
 return M

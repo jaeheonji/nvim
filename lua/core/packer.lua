@@ -1,6 +1,6 @@
 local M = {}
 
-M.init = function()
+M.setup = function(plugins)
     local fn = vim.fn
     local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
 
@@ -29,16 +29,6 @@ M.init = function()
             end,
         },
     })
-
-    local plugins = require("plugins")
-    M.load(plugins, bootstrap)
-end
-
-M.load = function(plugins, bootstrap)
-    local ok, packer = pcall(require, "packer")
-    if not ok then
-        error("Should be installed packer first!")
-    end
 
     packer.startup(function(use)
         for _, plugin in pairs(plugins) do
