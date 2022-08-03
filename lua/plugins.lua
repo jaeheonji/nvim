@@ -29,6 +29,7 @@ return {
 
     {
         "akinsho/bufferline.nvim",
+        event = "BufWinEnter",
         tag = "v2.*",
         config = function()
             require("config.bufferline")
@@ -37,7 +38,7 @@ return {
 
     {
         "feline-nvim/feline.nvim",
-        -- branch = "0.5-compat",
+        event = "BufWinEnter",
         config = function()
             require("config.feline")
         end,
@@ -45,6 +46,7 @@ return {
 
     {
         "nvim-treesitter/nvim-treesitter",
+        event = "BufRead",
         run = ":TSUpdate",
         config = function()
             require("config.nvim-treesitter")
@@ -53,7 +55,7 @@ return {
 
     {
         "windwp/nvim-autopairs",
-        event = "BufWinEnter",
+        event = "BufRead",
         config = function()
             require("config.nvim-autopairs")
         end,
@@ -61,7 +63,7 @@ return {
 
     {
         "lukas-reineke/indent-blankline.nvim",
-        event = "BufWinEnter",
+        after = "nvim-treesitter",
         config = function()
             require("config.indent-blankline")
         end,
@@ -69,7 +71,7 @@ return {
 
     {
         "anuvyklack/pretty-fold.nvim",
-        event = "BufWinEnter",
+        event = "BufRead",
         config = function()
             require("config.pretty-fold")
         end,
@@ -77,7 +79,7 @@ return {
 
     {
         "lewis6991/gitsigns.nvim",
-        event = "BufWinEnter",
+        event = "BufRead",
         config = function()
             require("config.gitsigns")
         end,
@@ -91,27 +93,40 @@ return {
     },
 
     {
-        "hrsh7th/nvim-cmp",
-        requires = {
-            "neovim/nvim-lspconfig",
-            "hrsh7th/cmp-nvim-lsp",
-            "hrsh7th/cmp-buffer",
-            "hrsh7th/cmp-path",
-            "hrsh7th/cmp-cmdline",
-            "hrsh7th/cmp-nvim-lsp-signature-help",
-            "L3MON4D3/LuaSnip",
-            "saadparwaiz1/cmp_luasnip",
-            "onsails/lspkind-nvim",
-            "rafamadriz/friendly-snippets",
-        },
+        "neovim/nvim-lspconfig",
         config = function()
-            require("config.cmp")
             require("config.nvim-lspconfig")
         end,
     },
 
     {
+        "rafamadriz/friendly-snippets",
+        event = "InsertEnter",
+    },
+
+    {
+        "hrsh7th/nvim-cmp",
+        after = "friendly-snippets",
+        requires = {
+            { "L3MON4D3/LuaSnip", after = "nvim-cmp" },
+            { "saadparwaiz1/cmp_luasnip", after = "LuaSnip" },
+            { "hrsh7th/cmp-nvim-lsp", after = "cmp_luasnip" },
+
+            { "onsails/lspkind-nvim", after = "cmp-nvim-lsp" },
+            { "hrsh7th/cmp-nvim-lsp-signature-help", after = "cmp-nvim-lsp" },
+            { "hrsh7th/cmp-buffer", after = "cmp-nvim-lsp" },
+
+            { "hrsh7th/cmp-path", after = "nvim-cmp" },
+            { "hrsh7th/cmp-cmdline", after = "nvim-cmp" },
+        },
+        config = function()
+            require("config.cmp")
+        end,
+    },
+
+    {
         "jose-elias-alvarez/null-ls.nvim",
+        event = "BufRead",
         config = function()
             require("config.null-ls")
         end,
@@ -146,7 +161,6 @@ return {
 
     {
         "folke/which-key.nvim",
-        -- cmd = "WhichKey",
         config = function()
             require("config.which-key")
         end,

@@ -28,6 +28,7 @@ M.setup = function(plugins)
                 return require("packer.util").float({ border = "single" })
             end,
         },
+        profile = { enable = true },
     })
 
     packer.startup(function(use)
