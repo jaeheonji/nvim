@@ -37,21 +37,7 @@ return {
         },
         override = {
             -- example:
-            ["lspconfig"] = {
-                servers = {
-                    sumneko_lua = {
-                        on_attach = function(client)
-                            client.resolved_capabilities.document_formatting = false
-                        end,
-                        settings = {
-                            Lua = {
-                                diagnostics = { globals = { "vim" } },
-                                telemetry = { enable = false },
-                            },
-                        },
-                    },
-                },
-            },
+            -- ["lspconfig"] = { ... },
         },
     },
 }
