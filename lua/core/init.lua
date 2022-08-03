@@ -24,6 +24,9 @@ M.setup = function()
     -- Plugins
     local plugins = vim.list_extend(require("plugins"), config.plugins.custom)
     require("core.packer").setup(plugins)
+
+    -- Others
+    require("core.utils").diagnostic()
 end
 
 return M

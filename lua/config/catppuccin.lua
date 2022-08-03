@@ -14,6 +14,15 @@ local settings = require("core.utils").override("catppuccin", {
             colored_indent_levels = true,
         },
         which_key = true,
+
+        native_lsp = {
+            virtual_text = {
+                errors = {},
+                hints = {},
+                warnings = {},
+                information = {},
+            },
+        },
     },
     highlight_overrides = {
         mocha = {

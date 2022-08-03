@@ -27,4 +27,12 @@ M.override = function(plugin, default_settings)
     return vim.tbl_deep_extend("force", default_settings, settings)
 end
 
+M.diagnostic = function()
+    local signs = { Error = "\u{f146}", Warn = "\u{f14a}", Hint = "\u{f0fd}", Info = "\u{f14d}" }
+    for type, icon in pairs(signs) do
+        local hl = "DiagnosticSign" .. type
+        vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+    end
+end
+
 return M
