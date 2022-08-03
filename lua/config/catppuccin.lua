@@ -34,7 +34,7 @@ local settings = require("core.utils").override("catppuccin", {
 
         BufferLineTabClose = { fg = cp.mantle, bg = cp.red },
 
-        BufferLineSideBarOffset = { fg = cp.red, bg = cp.mantle, style = { "bold", "italic" } },
+        BufferLineSideBarOffset = { fg = cp.red, bg = cp.mantle, style = { "bold" } },
 
         -- Telescope
         TelescopePromptNormal = { bg = cp.base },
@@ -52,6 +52,16 @@ local settings = require("core.utils").override("catppuccin", {
 
         -- WhichKey
         WhichKeyFloat = { bg = cp.base },
+
+        -- Alpha
+        AlphaHeaderBanner = { fg = cp.blue },
+        AlphaHeaderText = { fg = cp.subtext0 },
+
+        AlphaButtonShortcut = { fg = cp.base, bg = cp.blue, style = { "bold" } },
+        AlphaButtonDescription = { fg = cp.subtext0 },
+
+        AlphaFooterPlugins = { fg = cp.subtext0 },
+        AlphaFooterVersion = { fg = cp.subtext0 },
     },
 })
 

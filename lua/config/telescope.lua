@@ -23,14 +23,14 @@ local settings = require("core.utils").override("telescope", {
         selection_caret = "  ",
         entry_prefix = "  ",
         borderchars = { "─", "│", "─", "│", "┌", "┐", "┘", "└" },
+        layout_strategy = "vertical",
         layout_config = {
             prompt_position = "top",
-            height = 0.8,
-            width = 0.8,
+            vertical = {
+                height = 0.8,
+                width = 0.55,
 
-            horizontal = {
-                preview_width = 0.55,
-                results_width = 0.8,
+                preview_height = 0.7,
             },
         },
         mappings = {

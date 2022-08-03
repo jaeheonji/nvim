@@ -31,34 +31,68 @@ local function button(shortcut, description, action)
     }
 end
 
+local function version()
+    local v = vim.version()
+    return string.format("v%d.%d.%d", v.major, v.minor, v.patch)
+end
+
+local function dynamic_padding()
+    local fn = vim.fn
+
+    local padding = fn.floor(fn.winheight(0) * 0.3)
+    return fn.max({ 2, padding })
+end
+
 local header = {
-    type = "text",
-    val = {
-        [[                                                                   ]],
-        [[      ████ ██████           █████      ██                    ]],
-        [[     ███████████             █████                            ]],
-        [[     █████████ ███████████████████ ███   ███████████  ]],
-        [[    █████████  ███    █████████████ █████ ██████████████  ]],
-        [[   █████████ ██████████ █████████ █████ █████ ████ █████  ]],
-        [[ ███████████ ███    ███ █████████ █████ █████ ████ █████ ]],
-        [[██████  █████████████████████ ████ █████ █████ ████ ██████]],
+    banner = {
+        type = "text",
+        val = {
+            [[                                                                   ]],
+            [[      ████ ██████           █████      ██                    ]],
+            [[     ███████████             █████                            ]],
+            [[     █████████ ███████████████████ ███   ███████████  ]],
+            [[    █████████  ███    █████████████ █████ ██████████████  ]],
+            [[   █████████ ██████████ █████████ █████ █████ ████ █████  ]],
+            [[ ███████████ ███    ███ █████████ █████ █████ ████ █████ ]],
+            [[██████  █████████████████████ ████ █████ █████ ████ ██████]],
+        },
+        opts = {
+            position = "center",
+            hl = "AlphaHeaderBanner",
+        },
     },
-    opts = {
-        position = "center",
-        hl = "AlphaHeader",
+    text = {
+        type = "group",
+        val = {
+            {
+                type = "text",
+                val = " ┌──── " .. os.date("Today is %a %d %b") .. " ────┐",
+                opts = {
+                    position = "center",
+                    hl = "AlphaHeaderText",
+                },
+            },
+            {
+                type = "text",
+                val = "└──────── " .. os.date("%X") .. " ────────┘",
+                opts = {
+                    position = "center",
+                    hl = "AlphaHeaderText",
+                },
+            },
+        },
     },
 }
 
 local buttons = {
     type = "group",
     val = {
-        button("SPC / ", "Search"),
-        button("SPC be", "New buffer"),
-        button("SPC ff", "Find file"),
-        button("SPC qq", "Quit"),
+        button(" SPC /  ", "\u{f15c}  Search"),
+        button(" SPC be ", "\u{e23c}  New buffer"),
+        button(" SPC ff ", "\u{f002}  Find file"),
+        button(" SPC qq ", "\u{f08b}  Quit"),
     },
     opts = {
-        position = "center",
         spacing = 1,
     },
 }
@@ -72,13 +106,27 @@ local footer = {
             hl = "AlphaFooterPlugins",
         },
     },
+    version = {
+        type = "text",
+        val = version(),
+        opts = {
+            position = "center",
+            hl = "AlphaFooterVersion",
+        },
+    },
 }
 
 local config = {
     layout = {
-        header,
+        { type = "padding", val = dynamic_padding() },
+        header.banner,
+        { type = "padding", val = 2 },
+        header.text,
+        { type = "padding", val = 2 },
         buttons,
+        { type = "padding", val = 2 },
         footer.plugins,
+        footer.version,
     },
     opts = {},
 }
