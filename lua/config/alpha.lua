@@ -74,7 +74,7 @@ local header = {
             },
             {
                 type = "text",
-                val = "└──────── " .. os.date("%X") .. " ────────┘",
+                val = "└──────── " .. os.date("%I:%M:%S %p") .. " ────────┘",
                 opts = {
                     position = "center",
                     hl = "AlphaHeaderText",
