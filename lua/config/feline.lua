@@ -147,7 +147,7 @@ local settings = require("core.utils").override("feline", {
                         if count > 1 then
                             return string.format(" %s (+%d) ", name, count - 1)
                         else
-                            return string.format(" %s", name)
+                            return string.format(" %s ", name)
                         end
                     end,
                     hl = text_box,
