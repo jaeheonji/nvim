@@ -15,53 +15,55 @@ local settings = require("core.utils").override("catppuccin", {
         },
         which_key = true,
     },
-    custom_highlights = {
-        VertSplit = { fg = cp.surface1 },
-        Folded = { fg = cp.overlay0, bg = cp.surface0 },
-        NormalFloat = { bg = cp.base },
+    highlight_overrides = {
+        mocha = {
+            VertSplit = { fg = cp.surface1 },
+            Folded = { fg = cp.overlay0, bg = cp.surface0 },
+            NormalFloat = { bg = cp.base },
 
-        -- NeoTree
-        NeoTreeNormal = { fg = cp.text, bg = cp.mantle },
-        NeoTreeNormalNC = { fg = cp.text, bg = cp.mantle },
-        NeoTreeWinSeparator = { fg = cp.base, bg = cp.base },
+            -- NeoTree
+            NeoTreeNormal = { fg = cp.text, bg = cp.mantle },
+            NeoTreeNormalNC = { fg = cp.text, bg = cp.mantle },
+            NeoTreeWinSeparator = { fg = cp.base, bg = cp.base },
 
-        -- BufferLine
-        BufferLineBackground = { fg = cp.surface1 },
-        BufferLineFill = { bg = cp.mantle },
+            -- BufferLine
+            BufferLineBackground = { fg = cp.surface1 },
+            BufferLineFill = { bg = cp.mantle },
 
-        BufferLineIndicatorVisible = { bg = cp.mantle },
-        BufferLineIndicatorSelected = { fg = cp.base },
+            BufferLineIndicatorVisible = { bg = cp.mantle },
+            BufferLineIndicatorSelected = { fg = cp.base },
 
-        BufferLineTabClose = { fg = cp.mantle, bg = cp.red },
+            BufferLineTabClose = { fg = cp.mantle, bg = cp.red },
 
-        BufferLineSideBarOffset = { fg = cp.red, bg = cp.mantle, style = { "bold" } },
+            BufferLineSideBarOffset = { fg = cp.red, bg = cp.mantle, style = { "bold" } },
 
-        -- Telescope
-        TelescopePromptNormal = { bg = cp.base },
-        TelescopePromptBorder = { fg = cp.blue, bg = cp.base },
-        TelescopePromptTitle = { fg = cp.crust, bg = cp.red, style = { "bold" } },
-        TelescopePromptPrefix = { fg = cp.red },
+            -- Telescope
+            TelescopePromptNormal = { bg = cp.base },
+            TelescopePromptBorder = { fg = cp.blue, bg = cp.base },
+            TelescopePromptTitle = { fg = cp.crust, bg = cp.red, style = { "bold" } },
+            TelescopePromptPrefix = { fg = cp.red },
 
-        TelescopePreviewNormal = { bg = cp.base },
-        TelescopePreviewBorder = { fg = cp.blue, bg = cp.base },
-        TelescopePreviewTitle = { fg = cp.crust, bg = cp.green, style = { "bold" } },
+            TelescopePreviewNormal = { bg = cp.base },
+            TelescopePreviewBorder = { fg = cp.blue, bg = cp.base },
+            TelescopePreviewTitle = { fg = cp.crust, bg = cp.green, style = { "bold" } },
 
-        TelescopeResultsNormal = { bg = cp.base },
-        TelescopeResultsBorder = { fg = cp.blue, bg = cp.base },
-        TelescopeResultsTitle = { fg = cp.crust, bg = cp.blue, style = { "bold" } },
+            TelescopeResultsNormal = { bg = cp.base },
+            TelescopeResultsBorder = { fg = cp.blue, bg = cp.base },
+            TelescopeResultsTitle = { fg = cp.crust, bg = cp.blue, style = { "bold" } },
 
-        -- WhichKey
-        WhichKeyFloat = { bg = cp.base },
+            -- WhichKey
+            WhichKeyFloat = { bg = cp.base },
 
-        -- Alpha
-        AlphaHeaderBanner = { fg = cp.blue },
-        AlphaHeaderText = { fg = cp.subtext0 },
+            -- Alpha
+            AlphaHeaderBanner = { fg = cp.blue },
+            AlphaHeaderText = { fg = cp.subtext0 },
 
-        AlphaButtonShortcut = { fg = cp.base, bg = cp.blue, style = { "bold" } },
-        AlphaButtonDescription = { fg = cp.subtext0 },
+            AlphaButtonShortcut = { fg = cp.base, bg = cp.blue, style = { "bold" } },
+            AlphaButtonDescription = { fg = cp.subtext0 },
 
-        AlphaFooterPlugins = { fg = cp.subtext0 },
-        AlphaFooterVersion = { fg = cp.subtext0 },
+            AlphaFooterPlugins = { fg = cp.subtext0 },
+            AlphaFooterVersion = { fg = cp.subtext0 },
+        },
     },
 })
 
