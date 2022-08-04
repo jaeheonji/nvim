@@ -37,7 +37,7 @@ wkey.register({
     q = {
         name = "quit/session",
         q = { "<CMD>wqa<CR>", "Quit neovim" },
-        Q = { "<CMD>qa<CR>", "Quit neovim without saving" },
+        Q = { "<CMD>qa!<CR>", "Quit neovim without saving" },
     },
     f = {
         name = "file",
@@ -79,6 +79,7 @@ wkey.register({
         j = { "<CMD>lua vim.lsp.buf.declaration()<CR>", "LSP Find declaration" },
         s = { "<CMD>lua vim.lsp.buf.signature_help()<CR>", "LSP Signature help" },
         r = { "<CMD>lua vim.lsp.buf.rename()<CR>", "LSP Rename" },
+        f = { "<CMD>lua vim.lsp.buf.formatting()<CR>", "LSP Formatting" },
 
         x = { "<CMD>lua vim.diagnostic.open_float({ border = 'single' })<CR>", "List errors" },
         d = { "<CMD>lua vim.lsp.buf.definition()<CR>", "Jump to definition" },
