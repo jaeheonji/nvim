@@ -4,10 +4,7 @@ if not ok then
 end
 
 local settings = require("core.utils").override("null-ls", {
-    sources = {
-        require("null-ls").builtins.code_actions.gitsigns,
-        require("null-ls").builtins.formatting.stylua,
-    },
+    sources = {},
     on_attach = function(client, bufnr)
         local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
@@ -24,5 +21,26 @@ local settings = require("core.utils").override("null-ls", {
         end
     end,
 })
+
+local sources = {}
+for _, s in pairs(settings.sources) do
+    if type(s) == "string" then
+        local builtins = vim.split(s, "%.")
+        if builtins == nil then
+            goto continue
+        end
+
+        local source = vim.tbl_get(null_ls.builtins, unpack(builtins))
+        if source ~= nil then
+            table.insert(sources, source)
+        end
+    else
+        table.insert(sources, s)
+    end
+
+    ::continue::
+end
+
+settings.sources = sources
 
 null_ls.setup(settings)
