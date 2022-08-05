@@ -87,6 +87,7 @@ return {
 
     {
         "williamboman/mason.nvim",
+        after = "cmp-nvim-lsp",
         config = function()
             require("config.mason")
         end,
@@ -94,6 +95,7 @@ return {
 
     {
         "neovim/nvim-lspconfig",
+        after = "mason.nvim",
         config = function()
             require("config.nvim-lspconfig")
         end,
