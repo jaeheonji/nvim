@@ -88,6 +88,7 @@ return {
     {
         "williamboman/mason.nvim",
         after = "cmp-nvim-lsp",
+        cmd = { "Mason", "MasonInstall", "MasonUninstall", "MasonUninstallAll", "MasonLog" },
         config = function()
             require("config.mason")
         end,
