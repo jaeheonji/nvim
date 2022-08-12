@@ -1,7 +1,10 @@
 -- Default Configurations
 return {
     -- Set colorscheme
-    colorscheme = "catppuccin",
+    colorscheme = {
+        name = "catppuccin",
+        transparency = false
+    },
 
     -- Set vim options
     -- https://neovim.io/doc/user/options.html

@@ -3,9 +3,13 @@ if not ok then
     return
 end
 
+local colorscheme = require("core.utils").config().colorscheme
 local cp = require("catppuccin.palettes").get_palette()
 
+local base = colorscheme.transparency and "NONE" or cp.base
+
 local settings = require("core.utils").override("catppuccin", {
+    transparent_background = colorscheme.transparency,
     integrations = {
         neotree = { enabled = true },
         telescope = false,
@@ -28,7 +32,7 @@ local settings = require("core.utils").override("catppuccin", {
         mocha = {
             VertSplit = { fg = cp.surface1 },
             Folded = { fg = cp.overlay0, bg = cp.surface0 },
-            NormalFloat = { bg = cp.base },
+            NormalFloat = { bg = base },
 
             -- NeoTree
             NeoTreeNormal = { fg = cp.text, bg = cp.mantle },
@@ -36,32 +40,45 @@ local settings = require("core.utils").override("catppuccin", {
             NeoTreeWinSeparator = { fg = cp.base, bg = cp.base },
 
             -- BufferLine
-            BufferLineBackground = { fg = cp.surface1 },
-            BufferLineFill = { bg = cp.mantle },
-
-            BufferLineIndicatorVisible = { bg = cp.mantle },
-            BufferLineIndicatorSelected = { fg = cp.base },
-
+            BufferLineBackground = { fg = cp.surface1, bg = cp.mantle },
+            BufferLineBackcrust = { bg = cp.mantle },
+            BufferLineBufferVisible = { bg = cp.mantle },
+            BufferLineBufferSelected = { bg = cp.base },
+            -- tab
+            BufferLineTab = { bg = cp.mantle },
+            BufferLineTabSelected = { bg = cp.base },
             BufferLineTabClose = { fg = cp.mantle, bg = cp.red },
+            -- indicator
+            BufferLineIndicatorVisible = { bg = cp.mantle },
+            BufferLineIndicatorSelected = { fg = cp.base, bg = cp.base },
+            -- separator
+            BufferLineSeparator = { bg = cp.mantle },
+            BufferLineSeparatorVisible = { bg = cp.mantle },
+            BufferLineSeparatorSelected = { bg = cp.base },
+            -- button
+            BufferLineCloseButton = { bg = cp.mantle },
+            BufferLineCloseButtonVisible = { bg = cp.mantle },
+            BufferLineCloseButtonSelected = { bg = cp.base },
 
+            BufferLineFill = { bg = cp.mantle },
             BufferLineSideBarOffset = { fg = cp.red, bg = cp.mantle, style = { "bold" } },
 
             -- Telescope
-            TelescopePromptNormal = { bg = cp.base },
-            TelescopePromptBorder = { fg = cp.blue, bg = cp.base },
+            TelescopePromptNormal = { bg = base },
+            TelescopePromptBorder = { fg = cp.blue, bg = base },
             TelescopePromptTitle = { fg = cp.crust, bg = cp.red, style = { "bold" } },
             TelescopePromptPrefix = { fg = cp.red },
 
-            TelescopePreviewNormal = { bg = cp.base },
-            TelescopePreviewBorder = { fg = cp.blue, bg = cp.base },
+            TelescopePreviewNormal = { bg = base },
+            TelescopePreviewBorder = { fg = cp.blue, bg = base },
             TelescopePreviewTitle = { fg = cp.crust, bg = cp.green, style = { "bold" } },
 
-            TelescopeResultsNormal = { bg = cp.base },
-            TelescopeResultsBorder = { fg = cp.blue, bg = cp.base },
+            TelescopeResultsNormal = { bg = base },
+            TelescopeResultsBorder = { fg = cp.blue, bg = base },
             TelescopeResultsTitle = { fg = cp.crust, bg = cp.blue, style = { "bold" } },
 
             -- WhichKey
-            WhichKeyFloat = { bg = cp.base },
+            WhichKeyFloat = { bg = base },
 
             -- Alpha
             AlphaHeaderBanner = { fg = cp.blue },
@@ -78,7 +95,6 @@ local settings = require("core.utils").override("catppuccin", {
 
 catppuccin.setup(settings)
 
-local colorscheme = require("core.utils").config().colorscheme
-if colorscheme == "catppuccin" then
+if colorscheme.name == "catppuccin" then
     vim.cmd([[ colorscheme catppuccin ]])
 end
