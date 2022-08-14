@@ -83,7 +83,7 @@ local settings = require("core.utils").override("feline", {
                         return " " .. vim.b.gitsigns_head .. " "
                     end,
                     enabled = function()
-                        return vim.b.gitsigns_head
+                        return vim.b.gitsigns_head and vim.b.gitsigns_head ~= ""
                     end,
                     hl = text_box,
                     icon = "",
