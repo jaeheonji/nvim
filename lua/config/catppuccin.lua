@@ -10,6 +10,9 @@ local base = colorscheme.transparency and "NONE" or cp.base
 
 local settings = require("core.utils").override("catppuccin", {
     transparent_background = colorscheme.transparency,
+    compile = {
+        enabled = true,
+    },
     integrations = {
         neotree = { enabled = true },
         telescope = false,
