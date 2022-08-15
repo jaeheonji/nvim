@@ -30,6 +30,7 @@ return {
 
     {
         "akinsho/bufferline.nvim",
+        before = "catppuccin",
         tag = "v2.*",
         config = function()
             require("config.bufferline")
