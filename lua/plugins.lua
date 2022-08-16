@@ -11,6 +11,7 @@ return {
         "catppuccin/nvim",
         as = "catppuccin",
         run = ":CatppuccinCompile",
+	after = "bufferline.nvim",
         config = function()
             require("config.catppuccin")
         end,
@@ -30,7 +31,6 @@ return {
 
     {
         "akinsho/bufferline.nvim",
-        before = "catppuccin",
         tag = "v2.*",
         config = function()
             require("config.bufferline")
