@@ -3,7 +3,7 @@ return {
     -- Set colorscheme
     colorscheme = {
         name = "catppuccin",
-        transparency = false
+        transparency = false,
     },
 
     -- Set vim options
@@ -42,5 +42,11 @@ return {
             -- example:
             -- ["lspconfig"] = { ... },
         },
+    },
+
+    -- Set custom hook functions
+    hooks = {
+        pre_setup = function() end,
+        post_setup = function() end,
     },
 }

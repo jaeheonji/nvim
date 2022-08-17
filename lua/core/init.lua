@@ -24,9 +24,17 @@ M.setup = function()
     -- Plugins
     local plugins = vim.list_extend(require("plugins"), config.plugins.custom)
     require("core.packer").setup(plugins)
+end
 
-    -- Others
+M.pre_setup = function()
+    config.hooks.pre_setup()
+end
+
+M.post_setup = function()
+    -- Set custom diagnostics symbols
     require("core.utils").diagnostic()
+
+    config.hooks.post_setup()
 end
 
 return M
