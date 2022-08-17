@@ -38,11 +38,11 @@ Just <code>nvim</code>. It is an simple and extensible neovim config with awesom
 git clone https://github.com/jaeheonji/nvim $HOME/.config/nvim && nvim
 ```
 
-## :package: Plugins
+## :sparkles: Features
 
+* Soothing pastel theme by [catppuccin](https://github.com/catppuccin/nvim)
 * Dashboard with [alpha-nvim](https://github.com/goolord/alpha-nvim)
 * Buffer & Tab line with [bufferline.nvim](https://github.com/akinsho/bufferline.nvim)
-* Soothing pastel theme by [catppuccin](https://github.com/catppuccin/nvim)
 * Neovim LSP with [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig) and [mason.nvim](https://github.com/williamboman/mason.nvim)
 * Autocompletion with [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
 * Diagnositcs, code actions and more with [null-ls.nvim](https://github.com/jose-elias-alvarez/null-ls.nvim)
@@ -51,8 +51,8 @@ git clone https://github.com/jaeheonji/nvim $HOME/.config/nvim && nvim
 * Fuzzy find with [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
 * Popup suggestions and key binding with [which-key.nvim](https://github.com/folke/which-key.nvim)
 * Git integration for buffers with [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)
-* Smart navigation and resizing windows with [smart-splits.nvim](https://github.com/mrjones2014/smart-splits.nvim)
 * Syntax highlighting with [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
 * Autopair with [nvim-autopairs](https://github.com/windwp/nvim-autopairs)
-* Useful readability tools with [pretty-fold.nvim](https://github.com/anuvyklack/pretty-fold.nvim) + [indent-blankline.nvim](https://github.com/lukas-reineke/indent-blankline.nvim)
 * Powerful commenting with [comment.nvim](https://github.com/numToStr/Comment.nvim)
+
+A list of all plugins can be found [here](./docs/PLUGINS.md).
