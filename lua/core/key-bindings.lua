@@ -1,4 +1,4 @@
-local map = vim.api.nvim_set_keymap
+local map = vim.keymap.set
 local default_opts = { noremap = true, silent = true }
 
 -- BufferLine
@@ -34,6 +34,7 @@ end
 
 wkey.register({
     ["/"] = { "<CMD>Telescope live_grep<CR>", "Search" },
+    ["<space>"] = { "<CMD>Telescope project<CR>", "Search project" },
     q = {
         name = "quit/session",
         q = { "<CMD>wqa<CR>", "Quit neovim" },
@@ -44,6 +45,7 @@ wkey.register({
         f = { "<CMD>Telescope find_files<CR>", "Find file" },
         s = { "<CMD>w<CR>", "Save file" },
         S = { "<CMD>wa<CR>", "Save all file" },
+        d = { "<CMD>Telescope file_browser<CR>", "Find directory" },
     },
     o = {
         name = "open",

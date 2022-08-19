@@ -141,6 +141,8 @@ return {
         tag = "0.1.0",
         requires = {
             "nvim-telescope/telescope-ui-select.nvim",
+            "nvim-telescope/telescope-file-browser.nvim",
+            "nvim-telescope/telescope-project.nvim",
         },
         cmd = "Telescope",
         config = function()

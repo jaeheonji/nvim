@@ -53,8 +53,17 @@ local settings = require("core.utils").override("telescope", {
                 },
             }),
         },
+        ["file_browser"] = {
+            theme = "ivy",
+            initial_mode = "normal",
+            mappings = {
+                i = { ["<ESC>"] = false },
+            },
+        },
     },
 })
 
 telescope.setup(settings)
 telescope.load_extension("ui-select")
+telescope.load_extension("file_browser")
+telescope.load_extension("project")
