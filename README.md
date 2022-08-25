@@ -56,3 +56,117 @@ git clone https://github.com/jaeheonji/nvim $HOME/.config/nvim && nvim
 * Powerful commenting with [comment.nvim](https://github.com/numToStr/Comment.nvim)
 
 A list of all plugins can be found [here](./docs/PLUGINS.md).
+
+## :memo: Configuration
+
+One of the goals of this project is to provide users with a extensible user configuration. And the user configuration should be easy to understand and simple.
+
+First, To set up a user configuration, copy the default config to `custom.lua`.
+
+```
+cp ~/.config/nvim/lua/core/config.lua ~/.config/nvim/lua/custom.lua
+```
+
+> Please check the file name and path. Currently, only one path is supported.
+
+The user configuration provides five components:
+
+* `colorscheme`
+* `options`
+* `key_bindings`
+* `plugins`
+* `hooks`
+
+### colorscheme
+
+The `colorscheme` currently only provides [`catppuccin/nvim`](https://github.com/catppuccin/nvim). Instead, you can set up transparency through the `transparency` option. This options is `false` by default.
+
+### options
+
+You can set `options` for neovim. If you want to turn off the default options and set a new value, you can do the following.
+
+```lua
+options = {
+    enable_default = false, -- disable default options
+
+    setup = function()
+        vim.opt.number = true
+        vim.opt.relativenumber = false
+        ...
+    end,
+}
+```
+
+### key_bindings
+
+Same as `options`. Note that this project basically supports `which-key`, so you can use `which-key` to key-binding as follows.
+
+```lua
+options = {
+    enable_default = true,
+
+    setup = function()
+        local default_opts = { noremap = true, silent = true }
+        local map = vim.keymap.set
+
+        -- bind with vim.keymap.set function
+        map({ "n", "v" }, "<C-c>", '"+y', default_opts)
+        map({ "n" }, "<C-v>", '"+p', default_opts)
+
+
+        -- using which-key
+        local ok, wkey = pcall(require, "which-key")
+        if not ok then
+            return
+        end
+
+        wkey.register({ ... })
+    end,
+}
+```
+
+### plugins
+
+The `plugins` are one of the most important components of user configuration. The plugins provides two options. The first is to add a new plugin and the rest is to override the settings for the plugin provided by this project.
+
+**Add new plugins**
+
+```lua
+plugins = {
+    custom = {
+        {
+            -- I love Rust :)
+            "simrat39/rust-tools.nvim"
+            ft = { "rust "},
+            config = function()
+                require("rust-tools").setup({ ... })
+            end
+        }
+    }
+    ...
+}
+```
+
+**Override settings**
+
+Override settings uses the same table as each plugin settings by default. But, for `null-ls` and `lspconfig` settings, use custom settings for convenience. The following is an example.
+
+```lua
+plugins = {
+    override = {
+        ["lspconfig"] = {
+            servers = {
+                sumneko_lua = { on_attch = function() ... end },
+                gopls = {},
+                golangci_lint_ls = {},
+            }
+        },
+        ["null-ls"] = {
+            source = {
+                "code_actions.gitsigns",
+                "formatting.stylua",
+            }
+        }
+    }
+}
+```
