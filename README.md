@@ -170,3 +170,5 @@ plugins = {
     }
 }
 ```
+
+For more user configuration examples, check out my [configuration](./docs/CONFIGURATION.md).
