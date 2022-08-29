@@ -43,27 +43,27 @@ local settings = require("core.utils").override("catppuccin", {
             NeoTreeWinSeparator = { fg = cp.base, bg = cp.base },
 
             -- BufferLine
-            BufferLineBackground = { fg = cp.surface1, bg = cp.mantle },
-            BufferLineBackcrust = { bg = cp.mantle },
-            BufferLineBufferVisible = { bg = cp.mantle },
-            BufferLineBufferSelected = { bg = cp.base },
-            -- tab
-            BufferLineTab = { bg = cp.mantle },
-            BufferLineTabSelected = { bg = cp.base },
-            BufferLineTabClose = { fg = cp.mantle, bg = cp.red },
-            -- indicator
-            BufferLineIndicatorVisible = { bg = cp.mantle },
-            BufferLineIndicatorSelected = { fg = cp.base, bg = cp.base },
-            -- separator
-            BufferLineSeparator = { bg = cp.mantle },
-            BufferLineSeparatorVisible = { bg = cp.mantle },
-            BufferLineSeparatorSelected = { bg = cp.base },
-            -- button
-            BufferLineCloseButton = { bg = cp.mantle },
-            BufferLineCloseButtonVisible = { bg = cp.mantle },
-            BufferLineCloseButtonSelected = { bg = cp.base },
+            -- BufferLineBackground = { fg = cp.surface1, bg = cp.mantle },
+            -- BufferLineBackcrust = { bg = cp.mantle },
+            -- BufferLineBufferVisible = { bg = cp.mantle },
+            -- BufferLineBufferSelected = { bg = cp.base },
+            -- -- tab
+            -- BufferLineTab = { bg = cp.mantle },
+            -- BufferLineTabSelected = { bg = cp.base },
+            -- BufferLineTabClose = { fg = cp.mantle, bg = cp.red },
+            -- -- indicator
+            -- BufferLineIndicatorVisible = { bg = cp.mantle },
+            -- BufferLineIndicatorSelected = { fg = cp.base, bg = cp.base },
+            -- -- separator
+            -- BufferLineSeparator = { bg = cp.mantle },
+            -- BufferLineSeparatorVisible = { bg = cp.mantle },
+            -- BufferLineSeparatorSelected = { bg = cp.base },
+            -- -- button
+            -- BufferLineCloseButton = { bg = cp.mantle },
+            -- BufferLineCloseButtonVisible = { bg = cp.mantle },
+            -- BufferLineCloseButtonSelected = { fg = cp.red, bg = cp.base },
 
-            BufferLineFill = { bg = cp.mantle },
+            -- BufferLineFill = { bg = cp.mantle },
             BufferLineSideBarOffset = { fg = cp.red, bg = cp.mantle, style = { "bold" } },
 
             -- Telescope
