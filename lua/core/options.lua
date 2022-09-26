@@ -4,6 +4,7 @@ local opt = vim.opt
 opt.mouse = "a"
 opt.termguicolors = true
 opt.laststatus = 3
+opt.cursorline = true
 
 opt.clipboard = "unnamedplus"
 opt.swapfile = false
@@ -41,4 +42,4 @@ opt.foldlevelstart = 1
 
 -- Indent blankline
 opt.list = true
-opt.listchars:append "space:⋅"
+opt.listchars:append("space:⋅")
