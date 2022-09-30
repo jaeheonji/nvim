@@ -22,6 +22,7 @@
 | LuaSnip                     | Snippet Engine for Neovim written in Lua                                                  | https://github.com/L3MON4D3/LuaSnip                           |
 | mason.nvim                  | Portable package manager for Neovim that runs everywhere Neovim runs                      | https://github.com/williamboman/mason.nvim                    |
 | neo-tree.nvim               | Neovim plugin to manage the file system and other tree like structures                    | https://github.com/nvim-neo-tree/neo-tree.nvim                |
+| nvim-window-picker          | Pick a window and returns the window id of the picked window                              | https://github.com/s1n7ax/nvim-window-picker                  |
 | nui.nvim                    | UI Component Library for Neovim                                                           | https://github.com/MunifTanjim/nui.nvim                       |
 | null-ls.nvim                | Use Neovim as a language server to inject LSP diagnostics, code actions, and more via Lua | https://github.com/jose-elias-alvarez/null-ls.nvim            |
 | nvim-autopairs              | autopairs for neovim written by lua                                                       | https://github.com/windwp/nvim-autopairs                      |

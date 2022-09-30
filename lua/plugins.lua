@@ -29,6 +29,15 @@ return {
     },
 
     {
+        "s1n7ax/nvim-window-picker",
+        tag = "v1.*",
+        after = "neo-tree.nvim",
+        config = function()
+            require("config.nvim-window-picker")
+        end
+    },
+
+    {
         "akinsho/bufferline.nvim",
         tag = "v2.*",
         event = "BufWinEnter",

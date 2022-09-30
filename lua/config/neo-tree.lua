@@ -16,6 +16,8 @@ local settings = require("core.utils").override("neo-tree", {
     window = {
         mappings = {
             ["<SPACE>"] = "",
+            ["S"] = "split_with_window_picker",
+            ["s"] = "vsplit_with_window_picker",
         },
     },
 })
