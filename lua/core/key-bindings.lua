@@ -81,7 +81,7 @@ wkey.register({
         j = { "<CMD>lua vim.lsp.buf.declaration()<CR>", "LSP Find declaration" },
         s = { "<CMD>lua vim.lsp.buf.signature_help()<CR>", "LSP Signature help" },
         r = { "<CMD>lua vim.lsp.buf.rename()<CR>", "LSP Rename" },
-        f = { "<CMD>lua vim.lsp.buf.formatting()<CR>", "LSP Formatting" },
+        f = { "<CMD>lua vim.lsp.buf.format({ async = true })<CR>", "LSP Formatting" },
 
         x = { "<CMD>lua vim.diagnostic.open_float({ border = 'single' })<CR>", "List errors" },
         d = { "<CMD>lua vim.lsp.buf.definition()<CR>", "Jump to definition" },
