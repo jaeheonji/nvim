@@ -3,7 +3,6 @@ if not ok then
     return
 end
 
-
 local cp = require("catppuccin.palettes").get_palette()
 local highlights = require("catppuccin.groups.integrations.bufferline").get({
     custom = {
@@ -19,6 +18,7 @@ local highlights = require("catppuccin.groups.integrations.bufferline").get({
             tab_close = { fg = cp.mantle, bg = cp.red },
 
             -- indicator
+            indicator_visible = { fg = cp.mantle, bg = cp.mantle },
             indicator_selected = { fg = cp.base, bg = cp.base },
 
             -- separator
