@@ -97,9 +97,7 @@ return {
                             },
                         },
                         server = {
-                            capabilities = require("cmp_nvim_lsp").update_capabilities(
-                                vim.lsp.protocol.make_client_capabilities()
-                            ),
+                            capabilities = require("cmp_nvim_lsp").default_capabilities(),
                             handlers = {
                                 ["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "single" }),
                                 ["textDocument/signatureHelp"] = vim.lsp.with(
